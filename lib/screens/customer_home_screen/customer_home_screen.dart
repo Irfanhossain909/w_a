@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/const/assets_images_path.dart';
+import 'package:w_a/routes/app_routes.dart';
+import 'package:w_a/utils/app_all_log/app_log.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/widgets/app_image/app_image.dart';
+import 'package:w_a/widgets/search_bar/custom_search_bar.dart';
+import 'package:w_a/widgets/texts/app_text.dart';
 
 class CustomerHomeScreen extends StatelessWidget {
   const CustomerHomeScreen({super.key});
@@ -11,139 +17,135 @@ class CustomerHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            toolbarHeight: 40,
-            backgroundColor: AppColors.appBg,
-            floating: true,
-            pinned: true,
-            snap: false,
-            flexibleSpace: SafeArea(
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppSize.width(value: 16),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: AppSize.width(value: 37),
-                      height: AppSize.width(value: 24),
-                      child: AppImage(path: AssetsImagesPath.appLogo),
-                    ),
-                    Row(
-                      children: [
-                        AppImage(
-                          path: AssetsIconsPath.bookmark,
-                          width: AppSize.width(value: 26),
-                          height: AppSize.width(value: 26),
-                        ),
-                        SizedBox(width: AppSize.width(value: 12)),
-                        AppImage(
-                          path: AssetsIconsPath.notification,
-                          width: AppSize.width(value: 26),
-                          height: AppSize.width(value: 26),
-                        ),
-                      ],
-                    ),
-                  ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              toolbarHeight: 40,
+              backgroundColor: AppColors.appBg,
+              floating: true,
+              pinned: true,
+              snap: false,
+              flexibleSpace: SafeArea(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: AppSize.width(value: 16),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        width: AppSize.width(value: 37),
+                        height: AppSize.width(value: 24),
+                        child: AppImage(path: AssetsImagesPath.appLogo),
+                      ),
+                      Row(
+                        children: [
+                          AppImage(
+                            path: AssetsIconsPath.bookmark,
+                            width: AppSize.width(value: 26),
+                            height: AppSize.width(value: 26),
+                          ),
+                          SizedBox(width: AppSize.width(value: 12)),
+                          AppImage(
+                            path: AssetsIconsPath.notification,
+                            width: AppSize.width(value: 26),
+                            height: AppSize.width(value: 26),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          SliverToBoxAdapter(child: CustomSearchBar(hintText: "Search in Health & Wellness")),
-
-          SliverList(
-            delegate: SliverChildListDelegate([
-              const SizedBox(height: 20),
-              const Center(child: Text("Welcome to Customer Home")),
-              // Add more widgets here
-            ]),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-
-class CustomSearchBar extends StatelessWidget {
-  final String hintText;
-  final TextEditingController? controller;
-  final VoidCallback? onFilterPressed; // Optional callback for the filter button
-
-  const CustomSearchBar({
-    super.key,
-    required this.hintText,
-    this.controller,
-    this.onFilterPressed,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    // Define colors (you can easily change these later or use Theme colors)
-    const Color backgroundColor = Color(0xFF303134); // Dark grey background like the image
-    const Color iconAndHintColor = Color(0xFF9AA0A6); // Light grey for icons and hint
-    const Color textColor = Colors.white; // Color for the actual typed text
-    const double borderRadius = 30.0; // Adjust for desired roundness
-
-    return Container(
-      // Padding for the container itself can adjust outer spacing if needed
-      // padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(borderRadius),
-      ),
-      child: TextField(
-        controller: controller,
-        style: const TextStyle(color: textColor, fontSize: 16), // Style for user input
-        cursorColor: iconAndHintColor, // Color of the cursor
-        decoration: InputDecoration(
-          // --- Content Padding ---
-          // Adjusts padding *inside* the text field boundaries
-          contentPadding: const EdgeInsets.symmetric(
-            vertical: 15.0, // Adjust vertical padding for height
-            horizontal: 0, // Horizontal padding is handled by icons
-          ),
-
-          // --- Hint Text ---
-          hintText: hintText,
-          hintStyle: const TextStyle(color: iconAndHintColor, fontSize: 16),
-
-          // --- Icons ---
-          prefixIcon: const Icon(
-            Icons.search,
-            color: iconAndHintColor,
-          ),
-          // Use InkWell for tappable suffix icon if needed
-          suffixIcon: onFilterPressed != null
-              ? IconButton(
-                  icon: const Icon(
-                    Icons.tune, // Filter/settings icon
-                    color: iconAndHintColor,
+            // 10px gap
+            SliverToBoxAdapter(child: SizedBox(height: 10)),
+            SliverToBoxAdapter(
+              child: CustomSearchBar(hintText: "Search in Health & Wellness"),
+            ),
+            // 10px gap
+            SliverToBoxAdapter(child: SizedBox(height: 10)),
+            SliverToBoxAdapter(
+              child: AppText(
+                data: "Category",
+                fontSize: AppSize.width(value: 16),
+                fontWeight: FontWeight.w600,
+                color: AppColors.subTitle,
+              ),
+            ),
+            // 10px gap
+            SliverToBoxAdapter(child: SizedBox(height: 10)),
+            SliverList(
+              delegate: SliverChildListDelegate([
+                SizedBox(
+                  height: AppSize.width(value: 40),
+                  width: AppSize.width(value: 104),
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: items.length,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Get.toNamed(AppRoutes.customerHomeCategoryScreen, arguments: index);
+                          appLog(
+                            'Customer Home Page Category Item Clicked ${items[index]}',
+                          );
+                        },
+                        child: Container(
+                          margin: EdgeInsets.only(right: 10),
+                          height: AppSize.width(value: 37),
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: AppColors.boxBg,
+                            borderRadius: BorderRadius.circular(40),
+                            border: Border.all(
+                              color: AppColors.strock,
+                              width: 1,
+                            ),
+                          ),
+                          alignment: Alignment.center,
+                          child: ShaderMask(
+                            shaderCallback: (Rect bounds) {
+                              return AppColors.customGradient.createShader(
+                                bounds,
+                              );
+                            },
+                            child: AppText(
+                              data: items[index],
+                              fontSize: AppSize.width(value: 14),
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                   ),
-                  onPressed: onFilterPressed,
-                  tooltip: 'Filter', // Optional tooltip
-                )
-              : const Padding( // If no callback, just display the icon
-                  padding: EdgeInsets.only(right: 12.0), // Add padding so it's not flush right
-                  child: Icon(
-                    Icons.tune, // Filter/settings icon
-                    color: iconAndHintColor,
-                   ),
                 ),
-
-
-          // --- Borders ---
-          // Remove all borders by setting them to InputBorder.none
-          border: InputBorder.none,
-          focusedBorder: InputBorder.none,
-          enabledBorder: InputBorder.none,
-          errorBorder: InputBorder.none,
-          disabledBorder: InputBorder.none,
+              ]),
+            ),
+            // 10px gap
+            SliverToBoxAdapter(child: SizedBox(height: 10)),
+            SliverList(
+              delegate: SliverChildListDelegate([
+                const SizedBox(height: 20),
+                const Center(child: Text("Welcome to Customer Home")),
+                // Add more widgets here
+              ]),
+            ),
+          ],
         ),
       ),
     );
   }
 }
+
+final List<String> items = [
+  'Health & Wellness',
+  'Dining',
+  'Entertainment',
+  'Dining',
+  'Entertainment',
+];

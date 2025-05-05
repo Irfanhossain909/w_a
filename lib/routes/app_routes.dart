@@ -3,6 +3,7 @@ class AppRoutes {
 
   static const customerHomeScreen = "/customer-home-screen";
   static const customerNavigationScreen = "/customer-home-screen";
+  static const customerHomeCategoryScreen = "/customer-home-Category-screen";
   // static const initial = "/";
   // static const errorScreen = "/error";
   // static const signIn = "/sign-in";

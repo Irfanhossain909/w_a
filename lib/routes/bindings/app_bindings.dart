@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:w_a/screens/customer_home_category_screen.dart/controller/customer_home_category_controller.dart';
 import 'package:w_a/screens/customer_navigation_screen/controllers/customer_navigation_screen_controller.dart';
 
 class AppBindings extends Bindings {
@@ -7,6 +8,7 @@ class AppBindings extends Bindings {
     //==================== Customer Screens ==================
     // Get.lazyPut(() => CustomerHomeController());
     Get.lazyPut(() => CustomerNavigationScreenController());
+    Get.lazyPut(() => CustomerHomeCategoryController());
     // Get.lazyPut(() => AddAndEditPostScreenController());
     // Get.lazyPut(() => AddPostSuccessfullyScreenController());
     // Get.lazyPut(() => ServicesScreenController());

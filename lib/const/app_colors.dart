@@ -88,4 +88,18 @@ Color black50 = Color(0xffe7e7e7);
   static const Color white900 = Color(0xff656565);
 
 
+
+
+  //==============grediant========================
+  static const Gradient customGradient = LinearGradient(
+    colors: [
+      Color(0xFFFFD858), // Teal
+      Color(0xFFFFB959), // Pink
+      Color(0xFFFF954E), // Pink
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+
 }
