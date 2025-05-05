@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/routes/bindings/app_bindings.dart';
-import 'package:w_a/screens/customer_home_screen/customer_home_category_screen.dart';
+import 'package:w_a/screens/customer_home_category_screen.dart/customer_home_category_screen.dart';
 import 'package:w_a/screens/customer_home_screen/customer_home_screen.dart';
 import 'package:w_a/screens/customer_navigation_screen/customer_navigation_screen.dart';
 

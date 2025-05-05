@@ -66,7 +66,7 @@ class AppImageCircular extends StatelessWidget {
             errorBuilder: (context, error, stackTrace) {
               return ClipRRect(
                 borderRadius: BorderRadius.circular(borderRadius),
-                child: Container(
+                child: SizedBox(
                   width: width,
                   height: height,
                   // color: AppColors.primary,
@@ -191,7 +191,7 @@ class _NetworkImageWithRetryState extends State<NetworkImageWithRetry> {
 
               return ClipRRect(
                 borderRadius: BorderRadius.circular(widget.borderRadius),
-                child: Container(
+                child: SizedBox(
                   width: widget.width,
                   height: widget.height,
                   // color: AppColors.primary, // Placeholder color on error
@@ -204,7 +204,7 @@ class _NetworkImageWithRetryState extends State<NetworkImageWithRetry> {
               if (loadingProgress == null) return child; // Image loaded
               return ClipRRect(
                 borderRadius: BorderRadius.circular(widget.borderRadius),
-                child: Container(
+                child: SizedBox(
                   width: widget.width,
                   height: widget.height,
                   // color: AppColors.primary, // Loading placeholder color
@@ -212,7 +212,7 @@ class _NetworkImageWithRetryState extends State<NetworkImageWithRetry> {
               );
             },
           )
-        : Container(
+        : SizedBox(
             width: widget.width,
             height: widget.height,
             // color: AppColors.primary, // Placeholder color on error

@@ -54,7 +54,7 @@ class AppColors {
   static const Color boxBg = Color(0xff212526);
   static const Color text = Color(0xffFEFEFE);
   static const Color strock = Color(0xff34383A);
-  static const Color subTitle = Color(0xffB8B8B8); 
+  static const Color subTitle = Color(0xffB8B8B8);
   static const Color strockLight = Color(0xffFEF4C5);
   static const Color blue = Color(0xff4289FF);
   static const Color green = Color(0xff6DBD44);
@@ -63,8 +63,7 @@ class AppColors {
   static const Color yellow = Color(0xffFFBE00);
   static const Color error = Color(0xffFC6057);
 
-
-Color black50 = Color(0xffe7e7e7);
+  Color black50 = Color(0xffe7e7e7);
   static const Color black100 = Color(0xffb6b6b6);
   static const Color black200 = Color(0xff929292);
   static const Color black300 = Color(0xff606060);
@@ -74,7 +73,6 @@ Color black50 = Color(0xffe7e7e7);
   static const Color black700 = Color(0xff0d0d0d);
   static const Color black800 = Color(0xff0a0a0a);
   static const Color black900 = Color(0xff080808);
-
 
   static const Color white50 = Color(0xfffefefe);
   static const Color white100 = Color(0xfffbfbfb);
@@ -87,9 +85,6 @@ Color black50 = Color(0xffe7e7e7);
   static const Color white800 = Color(0xff858585);
   static const Color white900 = Color(0xff656565);
 
-
-
-
   //==============grediant========================
   static const Gradient customGradient = LinearGradient(
     colors: [
@@ -97,9 +92,7 @@ Color black50 = Color(0xffe7e7e7);
       Color(0xFFFFB959), // Pink
       Color(0xFFFF954E), // Pink
     ],
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
+    begin: Alignment(0.00, 0.50),
+    end: Alignment(1.00, 0.50),
   );
-
-
 }

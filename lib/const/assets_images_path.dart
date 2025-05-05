@@ -13,4 +13,8 @@ class AssetsImagesPath {
   // static const String ageWarning = "assets/images/age_warning.png";
 
   static const String appLogo = "assets/images/app_logo.png";
+  static const String img1 = "assets/images/img1.png";
+  static const String img2 = "assets/images/img2.png";
+  static const String img3 = "assets/images/img3.png";
+  static const String img4 = "assets/images/img4.png";
 }

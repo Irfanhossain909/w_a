@@ -46,6 +46,11 @@ class AssetsIconsPath {
   static const String notification = "assets/icons/notification.png";
   static const String bookmark = "assets/icons/bookmark.png";
   static const String search = "assets/icons/Search.png";
+  static const String arrowBack = "assets/icons/arrow-back.png";
+  static const String group = "assets/icons/group.png";
+  static const String location = "assets/icons/location.png";
+  static const String hart = "assets/icons/hart.png";
+  static const String hartRed = "assets/icons/hart_red.png";
 
 
 

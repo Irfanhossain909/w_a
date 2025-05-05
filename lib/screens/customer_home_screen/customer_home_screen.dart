@@ -7,6 +7,7 @@ import 'package:w_a/const/assets_images_path.dart';
 import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/utils/app_all_log/app_log.dart';
 import 'package:w_a/utils/app_size.dart';
+import 'package:w_a/widgets/Cards/facility_info_card.dart';
 import 'package:w_a/widgets/app_image/app_image.dart';
 import 'package:w_a/widgets/search_bar/custom_search_bar.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
@@ -18,7 +19,7 @@ class CustomerHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16),
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
@@ -88,7 +89,10 @@ class CustomerHomeScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
-                          Get.toNamed(AppRoutes.customerHomeCategoryScreen, arguments: index);
+                          Get.toNamed(
+                            AppRoutes.customerHomeCategoryScreen,
+                            arguments: items[index],
+                          );
                           appLog(
                             'Customer Home Page Category Item Clicked ${items[index]}',
                           );
@@ -126,18 +130,113 @@ class CustomerHomeScreen extends StatelessWidget {
                 ),
               ]),
             ),
-            // 10px gap
-            SliverToBoxAdapter(child: SizedBox(height: 10)),
-            SliverList(
-              delegate: SliverChildListDelegate([
-                const SizedBox(height: 20),
-                const Center(child: Text("Welcome to Customer Home")),
-                // Add more widgets here
-              ]),
+
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: AppSize.width(value: 10),
+                ),
+                child: CardTitleText(
+                  mainText: "Recommended Events",
+                  secondText: 1234,
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: AppSize.width(value: 270),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 12.0),
+                      child: SizedBox(
+                        width: AppSize.width(value: 310),
+                        child: FacilityInfoCard(
+                          imageUrl: AssetsImagesPath.img1,
+                          facilityName: "Riverside Medical Center",
+                          location: 'Brooklyn, New York',
+                          reviewCount: 6545456,
+                          numberOfPepole: 220,
+                          rating: 4 / 5.0,
+                          onBookNow: () {},
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: AppSize.width(value: 10),
+                ),
+                child: AppText(
+                  data: "What’s a New?",
+                  fontSize: AppSize.width(value: 16),
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.subTitle,
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: AppSize.width(value: 270),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 12.0),
+                      child: SizedBox(
+                        width: AppSize.width(value: 310),
+                        child: FacilityInfoCard(
+                          imageUrl: AssetsImagesPath.img1,
+                          facilityName: "Riverside Medical Center",
+                          location: 'Brooklyn, New York',
+                          reviewCount: 6545456,
+                          numberOfPepole: 220,
+                          rating: 4 / 5.0,
+                          onBookNow: () {},
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class CardTitleText extends StatelessWidget {
+  final String? mainText;
+  final int? secondText;
+  const CardTitleText({super.key, this.mainText, this.secondText});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        AppText(
+          data: mainText ?? "Recommended Events",
+          fontSize: AppSize.width(value: 16),
+          fontWeight: FontWeight.w600,
+          color: AppColors.subTitle,
+        ),
+        AppText(
+          data: "${secondText ?? '1345'} results",
+          fontSize: AppSize.width(value: 12),
+          fontWeight: FontWeight.w500,
+          color: AppColors.text,
+        ),
+      ],
     );
   }
 }

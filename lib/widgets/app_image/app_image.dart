@@ -38,7 +38,7 @@ class AppImage extends StatelessWidget {
         fit: fit,
         errorBuilder: (context, error, stackTrace) {
           errorLog("error form file image :", error);
-          return Container(
+          return SizedBox(
             width: width,
             height: height,
             // color: AppColors.primary,
@@ -75,7 +75,7 @@ class AppImage extends StatelessWidget {
         // >>>>>>>>>>>>>>>>>>>>>> when load fail image  <<<<<<<<<<<<<<<<<<<<<<
         errorBuilder: (context, error, stackTrace) {
           errorLog("asset image", error);
-          return Container(
+          return SizedBox(
             width: width,
             height: height,
             // color: AppColors.primary,
