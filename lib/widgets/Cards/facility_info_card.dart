@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_icons_path.dart';
@@ -159,7 +160,9 @@ class FacilityInfoCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(40),
                 height: AppSize.width(value: 40),
                 gradient: AppColors.customGradient,
-                onTap: onBookNow ?? () {}, // fallback if null
+                onTap:
+                    onBookNow ??
+                    () {}, // fallback if null
               ),
             ],
           ),

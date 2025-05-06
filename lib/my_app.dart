@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.appBg,
       ),
       // Scaffold background color
-      initialRoute: AppRoutes.customerHomeScreen,
+      initialRoute: AppRoutes.customerNavigationScreen,
       getPages: appRoutesFile,
     );
   }
