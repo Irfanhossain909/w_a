@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/widgets/Cards/service_show_in_bookmark.dart';
 import 'package:w_a/widgets/appbar/custom_appbar.dart';
 
@@ -14,12 +15,13 @@ class CustomerBookmarkScreen extends StatelessWidget {
         child: ListView.builder(
           itemCount: 10,
           itemBuilder: (context, index) {
-            return ServiceShowInBookmark();
+            return Padding(
+              padding: EdgeInsets.only(bottom: AppSize.width(value: 10)),
+              child: ServiceShowInBookmark(),
+            );
           },
-          
         ),
       ),
     );
   }
 }
-

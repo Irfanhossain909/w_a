@@ -9,6 +9,7 @@ import 'package:w_a/screens/customer_home_category_screen.dart/customer_home_cat
 import 'package:w_a/screens/customer_home_screen/customer_home_screen.dart';
 import 'package:w_a/screens/customer_navigation_screen/customer_navigation_screen.dart';
 import 'package:w_a/screens/customer_qr_code_screen/customer_qr_code_screen.dart';
+import 'package:w_a/screens/provider_navigation_screen/provider_navigation_screen.dart';
 
 List<GetPage> appRoutesFile = <GetPage>[
   // ////////// initial page
@@ -20,6 +21,11 @@ List<GetPage> appRoutesFile = <GetPage>[
     name: AppRoutes.customerNavigationScreen,
     binding: AppBindings(),
     page: () => CustomerNavigationScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.providerNavigationScreen,
+    binding: AppBindings(),
+    page: () => ProviderNavigationScreen(),
   ),
   GetPage(
     name: AppRoutes.customerHomeScreen,

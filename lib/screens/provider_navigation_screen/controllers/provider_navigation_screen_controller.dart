@@ -6,7 +6,7 @@ import 'package:w_a/screens/notification_screen/notification_screen.dart';
 // AppUserData? appUserData;
 // Rx<AppUserData> appUserData = AppUserData().obs;
 
-class CustomerNavigationScreenController extends GetxController {
+class ProviderNavigationScreenController extends GetxController {
   RxInt selectedIndex = RxInt(0);
 
   bool isExpanded = false;

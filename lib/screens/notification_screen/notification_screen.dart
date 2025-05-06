@@ -19,7 +19,7 @@ class NotificationScreen extends StatelessWidget {
           fontSize: AppSize.width(value: 20),
           fontWeight: FontWeight.w400,
           textAlign: TextAlign.center,
-          // color: AppColors.grey_500,
+          // color: AppColors.gray,
         ),
         centerTitle: true,
         scrolledUnderElevation: 0,
@@ -43,7 +43,7 @@ class NotificationScreen extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
-          // color: isRead ? AppColors.white_400 : AppColors.white50,
+          color: isRead ? AppColors.white400 : AppColors.white50,
         ),
 
         child: Padding(
@@ -62,7 +62,7 @@ class NotificationScreen extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.all(AppSize.width(value: 12)),
                   child: AppImage(
-                    path: "",
+                    // path: AssetsIconsPath.,
                     width: AppSize.width(value: 18),
                     height: AppSize.width(value: 18),
                   ),
