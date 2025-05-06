@@ -14,6 +14,8 @@ class AppRoutes {
 
   //////////Provider Screeen ========================
   static const providerNavigationScreen = "/provider-navigation-screen";
+  static const providerBookedClientScreen = "/provider-booked-client-screen";
+  static const providerBootingDetailsScreen = "/provider-booking-details-screen";
   // static const initial = "/";
   // static const errorScreen = "/error";
   // static const signIn = "/sign-in";

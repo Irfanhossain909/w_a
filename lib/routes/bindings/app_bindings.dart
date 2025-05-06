@@ -5,6 +5,8 @@ import 'package:w_a/screens/customer_check_availability_screen/controller/custom
 import 'package:w_a/screens/customer_event_info_screen/controller/customer_event_info_screen.dart';
 import 'package:w_a/screens/customer_home_category_screen.dart/controller/customer_home_category_controller.dart';
 import 'package:w_a/screens/customer_navigation_screen/controllers/customer_navigation_screen_controller.dart';
+import 'package:w_a/screens/provider_booked_client_screen/controller/provider_booked_client_controller.dart';
+import 'package:w_a/screens/provider_booking_details_screen/controller/provider_booking_details_controller.dart';
 import 'package:w_a/screens/provider_navigation_screen/controllers/provider_navigation_screen_controller.dart';
 
 class AppBindings extends Bindings {
@@ -20,6 +22,8 @@ class AppBindings extends Bindings {
 
     //====================Provider Screens==================
     Get.lazyPut(() => ProviderNavigationScreenController());
+    Get.lazyPut(() => ProviderBookedClientController());
+    Get.lazyPut(() => ProviderBookingDetailsController());
     // Get.lazyPut(() => AddAndEditPostScreenController());
     // Get.lazyPut(() => AddPostSuccessfullyScreenController());
     // Get.lazyPut(() => ServicesScreenController());

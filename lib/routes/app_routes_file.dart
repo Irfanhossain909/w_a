@@ -9,6 +9,8 @@ import 'package:w_a/screens/customer_home_category_screen.dart/customer_home_cat
 import 'package:w_a/screens/customer_home_screen/customer_home_screen.dart';
 import 'package:w_a/screens/customer_navigation_screen/customer_navigation_screen.dart';
 import 'package:w_a/screens/customer_qr_code_screen/customer_qr_code_screen.dart';
+import 'package:w_a/screens/provider_booked_client_screen/provider_booked_client_screen.dart';
+import 'package:w_a/screens/provider_booking_details_screen/provider_booking_details_screen.dart';
 import 'package:w_a/screens/provider_navigation_screen/provider_navigation_screen.dart';
 
 List<GetPage> appRoutesFile = <GetPage>[
@@ -53,6 +55,16 @@ List<GetPage> appRoutesFile = <GetPage>[
     name: AppRoutes.customerBookmarkScreen,
     binding: AppBindings(),
     page: () => CustomerBookmarkScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.providerBookedClientScreen,
+    binding: AppBindings(),
+    page: () => ProviderBookedClientScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.providerBootingDetailsScreen,
+    binding: AppBindings(),
+    page: () => ProviderBookingDetailsScreen(),
   ),
 
   ////////////////////  profile
