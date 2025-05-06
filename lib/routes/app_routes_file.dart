@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/routes/bindings/app_bindings.dart';
 import 'package:w_a/screens/customer_booking_confirm_screen/customer_booking_confirm_screen.dart';
+import 'package:w_a/screens/customer_bookmark_screen/customer_bookmark_screen.dart';
 import 'package:w_a/screens/customer_check_availability_screen/customer_check_avilability_screen.dart';
 import 'package:w_a/screens/customer_event_info_screen/customer_event_info_screen.dart';
 import 'package:w_a/screens/customer_home_category_screen.dart/customer_home_category_screen.dart';
@@ -41,6 +42,11 @@ List<GetPage> appRoutesFile = <GetPage>[
     name: AppRoutes.customerCheckAvilabilityScreen,
     binding: AppBindings(),
     page: () => CustomerCheckAvilabilityScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.customerBookmarkScreen,
+    binding: AppBindings(),
+    page: () => CustomerBookmarkScreen(),
   ),
 
   ////////////////////  profile

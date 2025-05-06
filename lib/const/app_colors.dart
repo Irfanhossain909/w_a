@@ -86,13 +86,23 @@ class AppColors {
   static const Color white900 = Color(0xff656565);
 
   //==============grediant========================
+  // static const Gradient customGradient = LinearGradient(
+  //   colors: [
+  //     Color(0xFFFFD858), // Teal
+  //     Color(0xFFFFB953), // Pink
+  //     Color(0xFFFF954E), // Pink
+  //   ],
+  //   begin: Alignment(0.00, 1.00),
+  //   end: Alignment(0.50, 0.50),
+  // );
   static const Gradient customGradient = LinearGradient(
     colors: [
-      Color(0xFFFFD858), // Teal
-      Color(0xFFFFB959), // Pink
-      Color(0xFFFF954E), // Pink
+      Color(0xFFFFD858), // Start color
+      Color(0xFFFFB953), // End color (transparent version of last)
+      Color(0xFFFF954E), // Fully opaque last color on right
     ],
-    begin: Alignment(0.00, 0.50),
-    end: Alignment(1.00, 0.50),
+    stops: [0.3, 0.6, 1.0],
+    begin: Alignment(0.00, 7),
+    end: Alignment(1.00, 0.50), // End at left
   );
 }

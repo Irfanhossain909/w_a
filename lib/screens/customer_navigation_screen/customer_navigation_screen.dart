@@ -96,27 +96,33 @@ Widget navItem({
     onTap: onTap,
     child: AnimatedContainer(
       duration: const Duration(milliseconds: 200),
-      // padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
         color: isSelected ? const Color(0xFF1E1E1E) : Colors.transparent,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Row(
-        children: [
-          AppImage(
-            path: iconPath,
-            width: 12,
-            height: 12,
-            iconColor: isSelected ? Colors.amber : Colors.white54,
-          ),
-          const SizedBox(width: 6),
-          AppText(
-            data: label,
-            fontSize: 13,
-            fontWeight: FontWeight.w500,
-            color: isSelected ? Colors.amber : Colors.white54,
-          ),
-        ],
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AppImage(
+              path: iconPath,
+              width: 12,
+              height: 12,
+              iconColor: isSelected ? Colors.amber : Colors.white54,
+            ),
+            const SizedBox(width: 4),
+            AppText(
+              data: label,
+              fontSize: 13,
+              fontWeight: FontWeight.w500,
+              color: isSelected ? Colors.amber : Colors.white54,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
       ),
     ),
   );

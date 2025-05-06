@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:w_a/screens/customer_bookmark_screen/controller/custom_bookmark_controller.dart';
+
 import 'package:w_a/screens/customer_check_availability_screen/controller/customer_check_availability_controller.dart';
 import 'package:w_a/screens/customer_event_info_screen/controller/customer_event_info_screen.dart';
 import 'package:w_a/screens/customer_home_category_screen.dart/controller/customer_home_category_controller.dart';
@@ -13,6 +15,7 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => CustomerHomeCategoryController());
     Get.lazyPut(() => CustomerEventInfoController());
     Get.lazyPut(() => CustomerCheckAvailabilityController());
+    Get.lazyPut(() => CustomerBookmarkController());
     // Get.lazyPut(() => AddAndEditPostScreenController());
     // Get.lazyPut(() => AddPostSuccessfullyScreenController());
     // Get.lazyPut(() => ServicesScreenController());

@@ -5,11 +5,11 @@ import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/const/assets_images_path.dart';
 import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/screens/customer_event_info_screen/controller/customer_event_info_screen.dart';
-import 'package:w_a/screens/customer_home_category_screen.dart/customer_home_category_screen.dart';
 import 'package:w_a/utils/app_all_log/app_log.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/utils/gap.dart';
 import 'package:w_a/widgets/app_image/app_image.dart';
+import 'package:w_a/widgets/appbar/custom_appbar.dart';
 import 'package:w_a/widgets/button/app_button.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 

@@ -19,7 +19,7 @@ class CustomerHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(12),
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
@@ -43,10 +43,15 @@ class CustomerHomeScreen extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          AppImage(
-                            path: AssetsIconsPath.bookmark,
-                            width: AppSize.width(value: 26),
-                            height: AppSize.width(value: 26),
+                          GestureDetector(
+                            onTap: () {
+                              Get.toNamed(AppRoutes.customerBookmarkScreen);
+                            },
+                            child: AppImage(
+                              path: AssetsIconsPath.bookmark,
+                              width: AppSize.width(value: 26),
+                              height: AppSize.width(value: 26),
+                            ),
                           ),
                           SizedBox(width: AppSize.width(value: 12)),
                           AppImage(

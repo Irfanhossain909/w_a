@@ -6,8 +6,6 @@ import 'package:w_a/routes/app_routes_file.dart';
 import 'package:w_a/routes/bindings/app_bindings.dart';
 import 'package:w_a/utils/app_size.dart';
 
-
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -20,7 +18,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        appBarTheme: AppBarTheme(backgroundColor: AppColors.appBg),
+        appBarTheme: AppBarTheme(
+          backgroundColor: AppColors.appBg,
+          surfaceTintColor: AppColors.appBg,
+        ),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         scaffoldBackgroundColor: AppColors.appBg,
       ),
