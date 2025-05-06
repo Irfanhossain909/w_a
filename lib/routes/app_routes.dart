@@ -1,5 +1,6 @@
 class AppRoutes {
   AppRoutes._();
+  static const notificationScreen = "/notification-screen";
   ////////// Customer Screen ========================
   static const customerHomeScreen = "/customer-home-screen";
   static const customerNavigationScreen = "/customer-home-screen";
@@ -14,6 +15,7 @@ class AppRoutes {
 
   //////////Provider Screeen ========================
   static const providerNavigationScreen = "/provider-navigation-screen";
+  static const providerHomeScreen = "/provider-home-screen";
   static const providerBookedClientScreen = "/provider-booked-client-screen";
   static const providerBootingDetailsScreen = "/provider-booking-details-screen";
   // static const initial = "/";

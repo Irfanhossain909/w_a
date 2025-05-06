@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/utils.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_images_path.dart';
+import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/widgets/app_image/app_image.dart';
 import 'package:w_a/widgets/appbar/custom_appbar.dart';
@@ -72,27 +75,32 @@ class ProviderBookedClientScreen extends StatelessWidget {
                                       fontWeight: FontWeight.w400,
                                       color: AppColors.subTitle,
                                     ),
-                                    Container(
-                                      width: 81,
-                                      height: 32,
-
-                                      decoration: ShapeDecoration(
-                                        shape: RoundedRectangleBorder(
-                                          side: BorderSide(
-                                            width: 1,
-                                            color: AppColors.yellow400,
-                                          ),
-                                          borderRadius: BorderRadius.circular(
-                                            12,
+                                    GestureDetector(
+                                      onTap: () {
+                                        Get.toNamed(AppRoutes.providerBootingDetailsScreen);
+                                      },
+                                      child: Container(
+                                        width: 81,
+                                        height: 32,
+                                      
+                                        decoration: ShapeDecoration(
+                                          shape: RoundedRectangleBorder(
+                                            side: BorderSide(
+                                              width: 1,
+                                              color: AppColors.yellow400,
+                                            ),
+                                            borderRadius: BorderRadius.circular(
+                                              12,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      alignment: Alignment.center,
-                                      child: AppText(
-                                        data: "Details",
-                                        fontSize: AppSize.width(value: 16),
-                                        fontWeight: FontWeight.w600,
-                                        color: AppColors.yellow400,
+                                        alignment: Alignment.center,
+                                        child: AppText(
+                                          data: "Details",
+                                          fontSize: AppSize.width(value: 16),
+                                          fontWeight: FontWeight.w600,
+                                          color: AppColors.yellow400,
+                                        ),
                                       ),
                                     ),
                                   ],
