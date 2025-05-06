@@ -1,4 +1,3 @@
-
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 // import 'package:w_a/const/app_colors.dart';
@@ -108,31 +107,39 @@ class AppButton extends StatelessWidget {
         height: height ?? AppSize.width(value: 50.0),
         alignment: Alignment.center,
         margin: margin,
-        decoration: decoration ??
+        decoration:
+            decoration ??
             BoxDecoration(
-              gradient: gradient ??
+              gradient:
+                  gradient ??
                   LinearGradient(
-                    colors: [AppColors.yellow, AppColors.yellow.withOpacity(0.8)],
+                    colors: [
+                      AppColors.yellow,
+                      AppColors.yellow.withOpacity(0.8),
+                    ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
-              borderRadius: borderRadius ?? BorderRadius.circular(AppSize.width(value: 10)),
+              borderRadius:
+                  borderRadius ??
+                  BorderRadius.circular(AppSize.width(value: 10)),
             ),
-        child: isLoading
-            ? SizedBox(
-                height: circularHeight ?? AppSize.width(value: 30.0),
-                width: circularHeight ?? AppSize.width(value: 30.0),
-                child: const CircularProgressIndicator(
-                  color: AppColors.white50,
-                  strokeWidth: 2,
+        child:
+            isLoading
+                ? SizedBox(
+                  height: circularHeight ?? AppSize.width(value: 30.0),
+                  width: circularHeight ?? AppSize.width(value: 30.0),
+                  child: const CircularProgressIndicator(
+                    color: AppColors.white50,
+                    strokeWidth: 2,
+                  ),
+                )
+                : AppText(
+                  data: title,
+                  color: titleColor ?? AppColors.black500,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
                 ),
-              )
-            : AppText(
-                data: title,
-                color: titleColor ?? AppColors.white50,
-                fontWeight: FontWeight.w600,
-                fontSize: 18,
-              ),
       ),
     );
   }

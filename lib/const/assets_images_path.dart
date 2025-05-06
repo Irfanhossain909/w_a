@@ -18,4 +18,5 @@ class AssetsImagesPath {
   static const String img3 = "assets/images/img3.png";
   static const String img4 = "assets/images/img4.png";
   static const String mapImg = "assets/images/map_img.png";
+  static const String qrCode = "assets/images/qr_code.png";
 }

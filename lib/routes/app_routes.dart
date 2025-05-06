@@ -5,6 +5,9 @@ class AppRoutes {
   static const customerNavigationScreen = "/customer-home-screen";
   static const customerHomeCategoryScreen = "/customer-home-Category-screen";
   static const customerEventInfoScreen = "/customer-event_info-screen";
+  static const customerCheckAvilabilityScreen = "/customer-check_avilability-screen";
+  static const customerBookingConfirmScreen = "/customer-booking-confirm-screen";
+  static const customerQRcodeScreen = "/customer-qr-code-screen";
   // static const initial = "/";
   // static const errorScreen = "/error";
   // static const signIn = "/sign-in";

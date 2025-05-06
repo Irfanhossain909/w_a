@@ -51,6 +51,7 @@ class AssetsIconsPath {
   static const String location = "assets/icons/location.png";
   static const String hart = "assets/icons/hart.png";
   static const String hartRed = "assets/icons/hart_red.png";
+  static const String confirm = "assets/icons/confirm.png";
 
 
 

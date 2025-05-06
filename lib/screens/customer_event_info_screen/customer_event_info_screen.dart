@@ -3,8 +3,10 @@ import 'package:get/get.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/const/assets_images_path.dart';
+import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/screens/customer_event_info_screen/controller/customer_event_info_screen.dart';
 import 'package:w_a/screens/customer_home_category_screen.dart/customer_home_category_screen.dart';
+import 'package:w_a/utils/app_all_log/app_log.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/utils/gap.dart';
 import 'package:w_a/widgets/app_image/app_image.dart';
@@ -240,6 +242,10 @@ class CustomerEventInfoScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(
                       AppSize.width(value: 12),
                     ),
+                    onTap: () {
+                      Get.toNamed(AppRoutes.customerCheckAvilabilityScreen);
+                      appLog("Click Event Screen <<<<<<<<<<<<<<<to>>>>>>>>>>>> Check Avilability Screen");
+                    },
                   ),
                 ],
               ),
