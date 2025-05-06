@@ -4,6 +4,7 @@ import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/screens/customer_navigation_screen/controllers/customer_navigation_screen_controller.dart';
+import 'package:w_a/screens/provider_add_event_screen/provider_addevent_screen.dart';
 import 'package:w_a/screens/provider_home_screen/provider_home_screen.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/widgets/app_image/app_image.dart';
@@ -18,10 +19,13 @@ class ProviderNavigationScreen extends StatelessWidget {
       init: CustomerNavigationScreenController(),
       builder: (controller) {
         return Scaffold(
-          floatingActionButton: AppImage(
-            path: AssetsIconsPath.scan,
-            width: AppSize.width(value: 32),
-            height: AppSize.width(value: 32),
+          floatingActionButton: Transform.translate(
+            offset: const Offset(0, 10), // Move down by 20 pixels
+            child: AppImage(
+              path: AssetsIconsPath.scan,
+              width: AppSize.width(value: 32),
+              height: AppSize.width(value: 32),
+            ),
           ),
           floatingActionButtonLocation:
               FloatingActionButtonLocation
@@ -32,6 +36,7 @@ class ProviderNavigationScreen extends StatelessWidget {
               children: [
                 // Your screens here...
                 ProviderHomeScreen(),
+                ProviderAddEventScreen(),
               ],
             ),
           ),
@@ -40,6 +45,7 @@ class ProviderNavigationScreen extends StatelessWidget {
               left: AppSize.width(value: 8),
               right: AppSize.width(value: 8),
               bottom: AppSize.width(value: 25),
+              top: AppSize.width(value: 8),
             ),
             child: Obx(
               () => Row(

@@ -10,11 +10,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
     required this.title,
+    this.trelling,
     this.height = kToolbarHeight, // default AppBar height
   });
 
   final String title;
   final double height;
+  final Widget? trelling;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         color: AppColors.subTitle,
       ),
       centerTitle: true,
+      actions: [
+        Padding(padding: EdgeInsets.all(12), child: trelling ?? SizedBox()),
+      ],
       leading: IconButton(
         icon: AppImage(
           path: AssetsIconsPath.arrowBack,
@@ -40,4 +45,3 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => Size.fromHeight(height);
 }
-

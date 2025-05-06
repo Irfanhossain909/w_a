@@ -10,8 +10,10 @@ import 'package:w_a/screens/customer_home_screen/customer_home_screen.dart';
 import 'package:w_a/screens/customer_navigation_screen/customer_navigation_screen.dart';
 import 'package:w_a/screens/customer_navigation_screen/screens/notification_screen.dart';
 import 'package:w_a/screens/customer_qr_code_screen/customer_qr_code_screen.dart';
+import 'package:w_a/screens/provider_add_event_screen/provider_addevent_screen.dart';
 import 'package:w_a/screens/provider_booked_client_screen/provider_booked_client_screen.dart';
 import 'package:w_a/screens/provider_booking_details_screen/provider_booking_details_screen.dart';
+import 'package:w_a/screens/provider_event_info_screen.dart/provider_event_info_screen.dart';
 import 'package:w_a/screens/provider_home_screen/provider_home_screen.dart';
 import 'package:w_a/screens/provider_navigation_screen/provider_navigation_screen.dart';
 
@@ -77,6 +79,16 @@ List<GetPage> appRoutesFile = <GetPage>[
     name: AppRoutes.providerBootingDetailsScreen,
     binding: AppBindings(),
     page: () => ProviderBookingDetailsScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.providerAddEventScreen,
+    binding: AppBindings(),
+    page: () => ProviderAddEventScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.providerEventInfoScreen,
+    binding: AppBindings(),
+    page: () => ProviderEventInfoScreen(),
   ),
 
   ////////////////////  profile

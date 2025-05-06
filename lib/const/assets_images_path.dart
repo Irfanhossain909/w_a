@@ -20,4 +20,5 @@ class AssetsImagesPath {
   static const String mapImg = "assets/images/map_img.png";
   static const String qrCode = "assets/images/qr_code.png";
   static const String person = "assets/images/person.jpg";
+  static const String imgPlaceholder = "assets/images/img_placeholder.png";
 }

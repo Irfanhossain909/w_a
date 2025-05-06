@@ -53,6 +53,9 @@ class AssetsIconsPath {
   static const String hartRed = "assets/icons/hart_red.png";
   static const String confirm = "assets/icons/confirm.png";
   static const String scan = "assets/icons/scan.png";
+  static const String edit = "assets/icons/edit.png";
+  static const String calender = "assets/icons/calender.png";
+  static const String call = "assets/icons/call.png";
 
 
 
