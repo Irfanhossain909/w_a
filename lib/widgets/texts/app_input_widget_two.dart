@@ -149,11 +149,13 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
           fillColor:
               widget.fillColor ?? AppColors.white50.withValues(alpha: .3),
           prefixIcon: widget.prefix,
+
           suffixIcon:
               widget.isPassWord
                   ? IconButton(
-                    color: AppColors.primary,
+                    color: AppColors.subTitle,
                     padding: EdgeInsets.zero,
+                    iconSize: 16,
                     highlightColor: AppColors.white500,
                     onPressed: () {
                       setState(() {
@@ -167,9 +169,9 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
                   )
                   : widget.suffixIcon,
           hintText: widget.hintText,
-          hintStyle: Theme.of(
-            context,
-          ).textTheme.titleSmall?.copyWith(color: AppColors.black200),
+          hintStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
+            color: AppColors.subTitle.withValues(alpha: .6),
+          ),
           prefixIconConstraints:
               widget.prefixIconConstraints ??
               BoxConstraints(
@@ -193,7 +195,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
           enabledBorder:
               widget.border ??
               OutlineInputBorder(
-                // borderSide: BorderSide(color: AppColors.primary200),
+                borderSide: BorderSide(color: AppColors.boxBg),
                 borderRadius: BorderRadius.circular(
                   AppSize.width(value: widget.borderRadius ?? 8.0),
                 ),
@@ -201,7 +203,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
           focusedBorder:
               widget.border ??
               OutlineInputBorder(
-                // borderSide: BorderSide(color: AppColors.primary200),
+                borderSide: BorderSide(color: AppColors.boxBg),
                 borderRadius: BorderRadius.circular(
                   AppSize.width(value: widget.borderRadius ?? 8.0),
                 ),
@@ -209,7 +211,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
           errorBorder:
               widget.errBorder ??
               OutlineInputBorder(
-                // borderSide: BorderSide(color: AppColors.primary200),
+                borderSide: BorderSide(color: AppColors.yellow),
                 borderRadius: BorderRadius.circular(
                   AppSize.width(value: widget.borderRadius ?? 8.0),
                 ),
@@ -217,7 +219,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
           focusedErrorBorder:
               widget.errBorder ??
               OutlineInputBorder(
-                // borderSide: BorderSide(color: AppColors.primary200),
+                borderSide: BorderSide(color: AppColors.yellow),
                 borderRadius: BorderRadius.circular(
                   AppSize.width(value: widget.borderRadius ?? 8.0),
                 ),
