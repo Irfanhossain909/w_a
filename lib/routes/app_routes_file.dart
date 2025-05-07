@@ -10,6 +10,7 @@ import 'package:w_a/screens/customer_home_screen/customer_home_screen.dart';
 import 'package:w_a/screens/customer_navigation_screen/customer_navigation_screen.dart';
 import 'package:w_a/screens/customer_navigation_screen/screens/notification_screen.dart';
 import 'package:w_a/screens/customer_qr_code_screen/customer_qr_code_screen.dart';
+import 'package:w_a/screens/on_boarding_screen/on_boarding_screen.dart';
 import 'package:w_a/screens/provider_add_event_screen/provider_addevent_screen.dart';
 import 'package:w_a/screens/provider_booked_client_screen/provider_booked_client_screen.dart';
 import 'package:w_a/screens/provider_booking_details_screen/provider_booking_details_screen.dart';
@@ -19,8 +20,17 @@ import 'package:w_a/screens/provider_navigation_screen/provider_navigation_scree
 import 'package:w_a/screens/splash_screen/splash_screen.dart';
 
 List<GetPage> appRoutesFile = <GetPage>[
-  // ////////// initial page
-
+  ////////// initial page
+  GetPage(
+    name: AppRoutes.splashScreen,
+    binding: AppBindings(),
+    page: () => SplashScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.onBoardingScreen,
+    binding: AppBindings(),
+    page: () => OnBoardingScreen(),
+  ),
   // /////////// auth
 
   ///////////// navigation screen or main screen
@@ -29,11 +39,7 @@ List<GetPage> appRoutesFile = <GetPage>[
     binding: AppBindings(),
     page: () => NotificationScreen(),
   ),
-  GetPage(
-    name: AppRoutes.splashScreen,
-    binding: AppBindings(),
-    page: () => SplashScreen(),
-  ),
+  
   GetPage(
     name: AppRoutes.customerNavigationScreen,
     binding: AppBindings(),

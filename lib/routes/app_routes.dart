@@ -2,6 +2,7 @@ class AppRoutes {
   AppRoutes._();
   static const splashScreen = "/splash-screen";
   static const notificationScreen = "/notification-screen";
+  static const onBoardingScreen = "/on-boarding-screen";
   
   ////////// Customer Screen ========================
   static const customerHomeScreen = "/customer-home-screen";

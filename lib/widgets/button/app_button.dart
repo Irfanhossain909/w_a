@@ -18,6 +18,7 @@ class AppButton extends StatelessWidget {
     this.decoration,
     this.titleColor,
     this.gradient,
+    this.titleSize
   });
 
   final void Function()? onTap;
@@ -31,6 +32,7 @@ class AppButton extends StatelessWidget {
   final BoxDecoration? decoration;
   final Color? titleColor;
   final Gradient? gradient;
+  final double? titleSize;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,7 @@ class AppButton extends StatelessWidget {
                     ],
                   ),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(40),
+                borderRadius:borderRadius ?? BorderRadius.circular(40),
               ),
             ),
         // BoxDecoration(
@@ -88,7 +90,7 @@ class AppButton extends StatelessWidget {
                   data: title,
                   color: titleColor ?? AppColors.black500,
                   fontWeight: FontWeight.w700,
-                  fontSize: 16,
+                  fontSize:titleSize ?? 16,
                 ),
       ),
     );
