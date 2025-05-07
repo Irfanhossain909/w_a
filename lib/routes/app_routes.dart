@@ -8,6 +8,7 @@ class AppRoutes {
   static const otpScreen = "/otp-screen";
   static const updatePasswordScreen = "/update-password-screen";
   static const forgotPasswordScreen = "/forgot-password-screen";
+  static const personalInfoScreen = "/personal-info-screen";
 
   ////////// Customer Screen ========================
   static const customerHomeScreen = "/customer-home-screen";
@@ -29,6 +30,7 @@ class AppRoutes {
       "/provider-booking-details-screen";
   static const providerAddEventScreen = "/provider-add-event-screen";
   static const providerEventInfoScreen = "/provider-event-info-screen";
+  static const profileScreen = "/profile-screen";
   // static const initial = "/";
   // static const errorScreen = "/error";
   // static const signIn = "/sign-in";

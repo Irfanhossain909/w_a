@@ -17,13 +17,19 @@ import 'package:w_a/screens/customer_navigation_screen/customer_navigation_scree
 import 'package:w_a/screens/customer_navigation_screen/screens/notification_screen.dart';
 import 'package:w_a/screens/customer_qr_code_screen/customer_qr_code_screen.dart';
 import 'package:w_a/screens/on_boarding_screen/on_boarding_screen.dart';
+import 'package:w_a/screens/personal_info_screen/personal_info_screen.dart';
+import 'package:w_a/screens/profile_screen/profile_screen.dart';
 import 'package:w_a/screens/provider_add_event_screen/provider_addevent_screen.dart';
 import 'package:w_a/screens/provider_booked_client_screen/provider_booked_client_screen.dart';
 import 'package:w_a/screens/provider_booking_details_screen/provider_booking_details_screen.dart';
 import 'package:w_a/screens/provider_event_info_screen.dart/provider_event_info_screen.dart';
 import 'package:w_a/screens/provider_home_screen/provider_home_screen.dart';
+import 'package:w_a/screens/provider_navigation_screen/controllers/provider_navigation_screen_controller.dart';
 import 'package:w_a/screens/provider_navigation_screen/provider_navigation_screen.dart';
 import 'package:w_a/screens/splash_screen/splash_screen.dart';
+
+final ProviderNavigationScreenController providerNavigationControllerr =
+    ProviderNavigationScreenController();
 
 List<GetPage> appRoutesFile = <GetPage>[
   ////////// initial page
@@ -96,6 +102,14 @@ List<GetPage> appRoutesFile = <GetPage>[
     binding: AppBindings(),
     page: () => CustomerHomeCategoryScreen(),
   ),
+  GetPage(
+    name: AppRoutes.profileScreen,
+    binding: AppBindings(),
+    page:
+        () => ProfileScreen(
+          providerNavigationControllerr: providerNavigationControllerr,
+        ),
+  ),
 
   // /////////////  services
   GetPage(
@@ -135,6 +149,12 @@ List<GetPage> appRoutesFile = <GetPage>[
   ),
 
   ////////////////////  profile
+  ///
+  GetPage(
+    name: AppRoutes.personalInfoScreen,
+    binding: AppBindings(),
+    page: () => PersonalInfoScreen(),
+  ),
 
   ////////////////// conversation  screen
 

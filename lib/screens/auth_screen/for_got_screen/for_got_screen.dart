@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/const/assets_images_path.dart';
-import 'package:w_a/const/assets_lottie_path.dart';
 import 'package:w_a/screens/auth_screen/for_got_screen/controllers/for_got_screen_controller.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/utils/gap.dart';

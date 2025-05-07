@@ -5,6 +5,8 @@ import 'package:w_a/screens/customer_check_availability_screen/controller/custom
 import 'package:w_a/screens/customer_event_info_screen/controller/customer_event_info_screen.dart';
 import 'package:w_a/screens/customer_home_category_screen.dart/controller/customer_home_category_controller.dart';
 import 'package:w_a/screens/customer_navigation_screen/controllers/customer_navigation_screen_controller.dart';
+import 'package:w_a/screens/personal_info_screen/controllers/personal_info_controller.dart';
+import 'package:w_a/screens/profile_screen/controllers/profile_controller.dart';
 import 'package:w_a/screens/provider_add_event_screen/controller/provider_addevent_controller.dart';
 import 'package:w_a/screens/provider_booked_client_screen/controller/provider_booked_client_controller.dart';
 import 'package:w_a/screens/provider_booking_details_screen/controller/provider_booking_details_controller.dart';
@@ -14,6 +16,9 @@ import 'package:w_a/screens/provider_navigation_screen/controllers/provider_navi
 class AppBindings extends Bindings {
   @override
   dependencies() {
+    //Common for both Vustomer &  Provider===============
+    Get.lazyPut(() => PersonalInfoController());
+
     //==================== Customer Screens ==================
     // Get.lazyPut(() => CustomerHomeController());
     Get.lazyPut(() => CustomerNavigationScreenController());
@@ -28,6 +33,7 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => ProviderBookingDetailsController());
     Get.lazyPut(() => ProviderAddEventController());
     Get.lazyPut(() => ProviderEventInfoController());
+    Get.lazyPut(() => ProfileController());
     // Get.lazyPut(() => AddAndEditPostScreenController());
     // Get.lazyPut(() => AddPostSuccessfullyScreenController());
     // Get.lazyPut(() => ServicesScreenController());

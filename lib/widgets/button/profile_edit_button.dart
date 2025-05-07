@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_icons_path.dart';
@@ -21,23 +19,23 @@ class ProfileEditButton extends StatelessWidget {
         width: AppSize.width(value: 100),
         height: AppSize.width(value: 32),
         decoration: BoxDecoration(
-          color: AppColors.white400,
+          gradient: AppColors.customGradient,
           borderRadius: BorderRadius.circular(8),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AppImage(
-              path: AssetsIconsPath.bookmark,
+              path: AssetsIconsPath.edit,
               width: AppSize.width(value: 12),
               height: AppSize.width(value: 12),
             ),
-            Gap(width: AppSize.width(value: 5)),
+            Gap(width: AppSize.width(value: 8)),
             AppText(
               data: text,
               fontSize: 14,
               fontWeight: FontWeight.w500,
-              color: AppColors.black300,
+              color: AppColors.cardBg,
             ),
           ],
         ),

@@ -60,7 +60,17 @@ class AssetsIconsPath {
   static const String lock = "assets/icons/lock.png";
   static const String user = "assets/icons/user.png";
   static const String role = "assets/icons/role.png";
+  static const String arrowDown = "assets/icons/arrow_down.png";
+  static const String arrowright = "assets/icons/arrow_right.png";
+  static const String trush = "assets/icons/trush.png";
+  static const String terms = "assets/icons/tarms.png";
+  static const String setting = "assets/icons/setting.png";
+  static const String privicy = "assets/icons/privicy.png";
+  static const String faq = "assets/icons/faq.png";
+  static const String calenderNon = "assets/icons/calender_non.png";
 
+  static const String about = "assets/icons/about.png";
+  static const String logout = "assets/icons/logout.png";
 
 
 }
