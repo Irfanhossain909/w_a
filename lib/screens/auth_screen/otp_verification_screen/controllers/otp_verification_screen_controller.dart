@@ -46,15 +46,15 @@ class OtpVerificationScreenController extends GetxController {
   }
 
 ////////////////////  int type otp using this function and merge
-  int _getOtpNumber() {
-    try {
-      var data = "${otpText1.text}${otpText2.text}${otpText3.text}${otpText4.text}${otpText5.text}${otpText6.text}";
-      return int.parse(data);
-    } catch (e) {
-      errorLog("get otp  number function", e);
-      return 000000;
-    }
-  }
+  // int _getOtpNumber() {
+  //   try {
+  //     var data = "${otpText1.text}${otpText2.text}${otpText3.text}${otpText4.text}${otpText5.text}${otpText6.text}";
+  //     return int.parse(data);
+  //   } catch (e) {
+  //     errorLog("get otp  number function", e);
+  //     return 000000;
+  //   }
+  // }
 
 //////////////  otp verification function
   Future<dynamic> otpVerification() async {

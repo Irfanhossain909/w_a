@@ -93,28 +93,32 @@ class OtpVerificationScreen extends StatelessWidget {
                         ),
                       ),
                       Gap(height: AppSize.width(value: 10)),
-                      RichText(
-                        text: TextSpan(
-                          style: TextStyle(
-                            fontSize: AppSize.width(
-                              value: AppSize.width(value: 20),
-                            ),
-                            fontFamily: AppConst.fontFamily1,
-                            height: 1.5,
-                            color: AppColors.subTitle,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          children: [
-                            const TextSpan(text: 'Resend code in '),
-                            TextSpan(
-                              text: controller.formatTime(
-                                controller.seconds.value,
+                      Obx(
+                      () {
+                          return RichText(
+                            text: TextSpan(
+                              style: TextStyle(
+                                fontSize: AppSize.width(
+                                  value: AppSize.width(value: 20),
+                                ),
+                                fontFamily: AppConst.fontFamily1,
+                                height: 1.5,
+                                color: AppColors.subTitle,
+                                fontWeight: FontWeight.w400,
                               ),
-                              style: TextStyle(color: AppColors.yellow500),
+                              children: [
+                                const TextSpan(text: 'Resend code in '),
+                                TextSpan(
+                                  text: controller.formatTime(
+                                    controller.seconds.value,
+                                  ),
+                                  style: TextStyle(color: AppColors.yellow500),
+                                ),
+                                const TextSpan(text: ' s '),
+                              ],
                             ),
-                            const TextSpan(text: ' s '),
-                          ],
-                        ),
+                          );
+                        }
                       ),
                       const Gap(height: 70),
                       Padding(

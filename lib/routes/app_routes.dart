@@ -6,6 +6,7 @@ class AppRoutes {
   static const signInScreen = "/sign-in-screen";
   static const signUpScreen = "/sign-up-screen";
   static const otpScreen = "/otp-screen";
+  static const updatePasswordScreen = "/update-password-screen";
 
   ////////// Customer Screen ========================
   static const customerHomeScreen = "/customer-home-screen";

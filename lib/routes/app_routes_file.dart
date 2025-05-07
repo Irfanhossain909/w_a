@@ -3,6 +3,7 @@ import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/routes/bindings/app_auth_binding.dart';
 import 'package:w_a/routes/bindings/app_bindings.dart';
 import 'package:w_a/screens/auth_screen/otp_verification_screen/otp_verification_screen.dart';
+import 'package:w_a/screens/auth_screen/reset_password_screen/update_password_screen.dart';
 import 'package:w_a/screens/auth_screen/sign_up_screen/sign_up_screen.dart';
 import 'package:w_a/screens/auth_screen/signin_screen/signin_screen.dart';
 import 'package:w_a/screens/customer_booking_confirm_screen/customer_booking_confirm_screen.dart';
@@ -36,9 +37,26 @@ List<GetPage> appRoutesFile = <GetPage>[
     page: () => OnBoardingScreen(),
   ),
   /////////// auth
-  GetPage(name: AppRoutes.signInScreen,binding: AppAuthBinding(), page: ()=> SignInScreen()),
-  GetPage(name: AppRoutes.signUpScreen,binding: AppAuthBinding(), page: ()=> SignUpScreen()),
-  GetPage(name: AppRoutes.otpScreen,binding: AppAuthBinding(), page: ()=> OtpVerificationScreen()),
+  GetPage(
+    name: AppRoutes.signInScreen,
+    binding: AppAuthBinding(),
+    page: () => SignInScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.signUpScreen,
+    binding: AppAuthBinding(),
+    page: () => SignUpScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.otpScreen,
+    binding: AppAuthBinding(),
+    page: () => OtpVerificationScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.updatePasswordScreen,
+    binding: AppAuthBinding(),
+    page: () => UpdatePasswordScreen(),
+  ),
 
   ///////////// navigation screen or main screen
   GetPage(
@@ -46,7 +64,7 @@ List<GetPage> appRoutesFile = <GetPage>[
     binding: AppBindings(),
     page: () => NotificationScreen(),
   ),
-  
+
   GetPage(
     name: AppRoutes.customerNavigationScreen,
     binding: AppBindings(),

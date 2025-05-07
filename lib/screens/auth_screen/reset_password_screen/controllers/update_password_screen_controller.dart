@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:w_a/utils/app_all_log/app_log.dart';
 import 'package:w_a/utils/app_all_log/error_log.dart';
 
-class ResetPasswordScreenController extends GetxController {
+class UpdatePasswordScreenController extends GetxController {
   // final AuthRepository authRepository = AuthRepository();
   RxBool isLoading = false.obs;
   TextEditingController passwordTextEditingController = TextEditingController();
@@ -28,11 +27,9 @@ class ResetPasswordScreenController extends GetxController {
     //   errorLog("reset password", e);
     //   isLoading.value = false;
     // }
-    
   }
 
   clickResetButton() {
-
     try {
       appLog('Reset PAssword Button Tpped');
     } catch (e) {
