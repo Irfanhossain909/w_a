@@ -16,6 +16,7 @@ import 'package:w_a/screens/provider_booking_details_screen/provider_booking_det
 import 'package:w_a/screens/provider_event_info_screen.dart/provider_event_info_screen.dart';
 import 'package:w_a/screens/provider_home_screen/provider_home_screen.dart';
 import 'package:w_a/screens/provider_navigation_screen/provider_navigation_screen.dart';
+import 'package:w_a/screens/splash_screen/splash_screen.dart';
 
 List<GetPage> appRoutesFile = <GetPage>[
   // ////////// initial page
@@ -27,6 +28,11 @@ List<GetPage> appRoutesFile = <GetPage>[
     name: AppRoutes.notificationScreen,
     binding: AppBindings(),
     page: () => NotificationScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.splashScreen,
+    binding: AppBindings(),
+    page: () => SplashScreen(),
   ),
   GetPage(
     name: AppRoutes.customerNavigationScreen,
