@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:w_a/routes/app_routes.dart';
+import 'package:w_a/routes/bindings/app_auth_binding.dart';
 import 'package:w_a/routes/bindings/app_bindings.dart';
+import 'package:w_a/screens/auth_screen/signin_screen/signin_screen.dart';
 import 'package:w_a/screens/customer_booking_confirm_screen/customer_booking_confirm_screen.dart';
 import 'package:w_a/screens/customer_bookmark_screen/customer_bookmark_screen.dart';
 import 'package:w_a/screens/customer_check_availability_screen/customer_check_avilability_screen.dart';
@@ -31,7 +33,8 @@ List<GetPage> appRoutesFile = <GetPage>[
     binding: AppBindings(),
     page: () => OnBoardingScreen(),
   ),
-  // /////////// auth
+  /////////// auth
+  GetPage(name: AppRoutes.signInScreen,binding: AppAuthBinding(), page: ()=> SignInScreen()),
 
   ///////////// navigation screen or main screen
   GetPage(

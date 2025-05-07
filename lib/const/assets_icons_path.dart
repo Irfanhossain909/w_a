@@ -56,6 +56,8 @@ class AssetsIconsPath {
   static const String edit = "assets/icons/edit.png";
   static const String calender = "assets/icons/calender.png";
   static const String call = "assets/icons/call.png";
+  static const String email = "assets/icons/email.png";
+  static const String lock = "assets/icons/lock.png";
 
 
 

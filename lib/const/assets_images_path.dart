@@ -23,4 +23,5 @@ class AssetsImagesPath {
   static const String imgPlaceholder = "assets/images/img_placeholder.png";
   static const String splashLogo = "assets/images/splash_logo.png";
   static const String onBoarding = "assets/images/onbording.png";
+  static const String authBg = "assets/images/auth_bg.png";
 }

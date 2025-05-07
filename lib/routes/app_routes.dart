@@ -3,7 +3,8 @@ class AppRoutes {
   static const splashScreen = "/splash-screen";
   static const notificationScreen = "/notification-screen";
   static const onBoardingScreen = "/on-boarding-screen";
-  
+  static const signInScreen = "/sign-in-screen";
+
   ////////// Customer Screen ========================
   static const customerHomeScreen = "/customer-home-screen";
   static const customerNavigationScreen = "/customer-home-screen";
@@ -20,7 +21,8 @@ class AppRoutes {
   static const providerNavigationScreen = "/provider-navigation-screen";
   static const providerHomeScreen = "/provider-home-screen";
   static const providerBookedClientScreen = "/provider-booked-client-screen";
-  static const providerBootingDetailsScreen = "/provider-booking-details-screen";
+  static const providerBootingDetailsScreen =
+      "/provider-booking-details-screen";
   static const providerAddEventScreen = "/provider-add-event-screen";
   static const providerEventInfoScreen = "/provider-event-info-screen";
   // static const initial = "/";
