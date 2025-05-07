@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_icons_path.dart';
-import 'package:w_a/routes/bindings/app_auth_binding.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/widgets/app_image/app_image.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
