@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_images_path.dart';
+import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/utils/gap.dart';
 import 'package:w_a/widgets/appbar/custom_appbar.dart';
@@ -27,9 +29,9 @@ class PersonalInfoScreen extends StatelessWidget {
               email: "liam@gmail.com",
               editSection: ProfileEditButton(
                 text: "Edit Profile",
-                // onTap: () {
-                //   Get.toNamed(AppRoutes.profileEditScreen);
-                // },
+                onTap: () {
+                  Get.toNamed(AppRoutes.profileEditScreen);
+                },
               ),
             ),
 

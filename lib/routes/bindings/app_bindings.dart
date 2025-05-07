@@ -6,6 +6,7 @@ import 'package:w_a/screens/customer_event_info_screen/controller/customer_event
 import 'package:w_a/screens/customer_home_category_screen.dart/controller/customer_home_category_controller.dart';
 import 'package:w_a/screens/customer_navigation_screen/controllers/customer_navigation_screen_controller.dart';
 import 'package:w_a/screens/personal_info_screen/controllers/personal_info_controller.dart';
+import 'package:w_a/screens/profile_edit_screen/controller/profile_edit_screen_controller.dart';
 import 'package:w_a/screens/profile_screen/controllers/profile_controller.dart';
 import 'package:w_a/screens/provider_add_event_screen/controller/provider_addevent_controller.dart';
 import 'package:w_a/screens/provider_booked_client_screen/controller/provider_booked_client_controller.dart';
@@ -18,6 +19,7 @@ class AppBindings extends Bindings {
   dependencies() {
     //Common for both Vustomer &  Provider===============
     Get.lazyPut(() => PersonalInfoController());
+    Get.lazyPut(() => ProfileEditScreenController()); 
 
     //==================== Customer Screens ==================
     // Get.lazyPut(() => CustomerHomeController());

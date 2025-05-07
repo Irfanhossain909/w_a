@@ -58,7 +58,7 @@ class ProfileScreen extends StatelessWidget {
                             title: "FAQ",
                             iconPath: AssetsIconsPath.faq,
                             onTap: () {
-                              // Get.toNamed(AppRoutes.faqScreen);
+                              Get.toNamed(AppRoutes.faqScreen);
                             },
                           ),
                           // AccountCardWidget(
@@ -226,26 +226,26 @@ class ProfileScreen extends StatelessWidget {
                                   AccountCardWidget(
                                     title: "About us",
                                     iconPath: AssetsIconsPath.about,
-                                    // onTap: () {
-                                    //   Get.toNamed(AppRoutes.aboutUsScreen);
-                                    // },
+                                    onTap: () {
+                                      Get.toNamed(AppRoutes.aboutUsScreen);
+                                    },
                                   ),
                                   AccountCardWidget(
                                     title: "Privacy policy",
                                     iconPath: AssetsIconsPath.privicy,
                                     onTap: () {
-                                      // Get.toNamed(
-                                      //   AppRoutes.privacyAndPolicyScreen,
-                                      // );
+                                      Get.toNamed(
+                                        AppRoutes.privicyAndPlicyScreen,
+                                      );
                                     },
                                   ),
                                   AccountCardWidget(
                                     title: "Terms & conditions",
                                     iconPath: AssetsIconsPath.terms,
                                     onTap: () {
-                                      // Get.toNamed(
-                                      //   AppRoutes.termsAndConditionScreen,
-                                      // );
+                                      Get.toNamed(
+                                        AppRoutes.termsAndConditionScreen,
+                                      );
                                     },
                                   ),
                                   Gap(height: AppSize.width(value: 12)),

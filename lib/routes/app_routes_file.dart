@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/routes/bindings/app_auth_binding.dart';
 import 'package:w_a/routes/bindings/app_bindings.dart';
+import 'package:w_a/screens/about_us_screen/about_us_screen.dart';
 import 'package:w_a/screens/auth_screen/for_got_screen/for_got_screen.dart';
 import 'package:w_a/screens/auth_screen/otp_verification_screen/otp_verification_screen.dart';
 import 'package:w_a/screens/auth_screen/update_password_screen/update_password_screen.dart';
@@ -16,8 +17,11 @@ import 'package:w_a/screens/customer_home_screen/customer_home_screen.dart';
 import 'package:w_a/screens/customer_navigation_screen/customer_navigation_screen.dart';
 import 'package:w_a/screens/customer_navigation_screen/screens/notification_screen.dart';
 import 'package:w_a/screens/customer_qr_code_screen/customer_qr_code_screen.dart';
+import 'package:w_a/screens/faq_screen/faq_screen.dart';
 import 'package:w_a/screens/on_boarding_screen/on_boarding_screen.dart';
 import 'package:w_a/screens/personal_info_screen/personal_info_screen.dart';
+import 'package:w_a/screens/privacy_and_policy_screen/privacy_and_policy_screen.dart';
+import 'package:w_a/screens/profile_edit_screen/profile_edit_screen.dart';
 import 'package:w_a/screens/profile_screen/profile_screen.dart';
 import 'package:w_a/screens/provider_add_event_screen/provider_addevent_screen.dart';
 import 'package:w_a/screens/provider_booked_client_screen/provider_booked_client_screen.dart';
@@ -27,6 +31,7 @@ import 'package:w_a/screens/provider_home_screen/provider_home_screen.dart';
 import 'package:w_a/screens/provider_navigation_screen/controllers/provider_navigation_screen_controller.dart';
 import 'package:w_a/screens/provider_navigation_screen/provider_navigation_screen.dart';
 import 'package:w_a/screens/splash_screen/splash_screen.dart';
+import 'package:w_a/screens/terms_and_condition_screen/terms_and_condition_screen.dart';
 
 final ProviderNavigationScreenController providerNavigationControllerr =
     ProviderNavigationScreenController();
@@ -154,6 +159,31 @@ List<GetPage> appRoutesFile = <GetPage>[
     name: AppRoutes.personalInfoScreen,
     binding: AppBindings(),
     page: () => PersonalInfoScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.profileEditScreen,
+    binding: AppBindings(),
+    page: () => ProfileEditScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.aboutUsScreen,
+    binding: AppBindings(),
+    page: () => AboutUsScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.privicyAndPlicyScreen,
+    binding: AppBindings(),
+    page: () => PrivacyAndPolicyScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.termsAndConditionScreen,
+    binding: AppBindings(),
+    page: () => TermsAndConditionScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.faqScreen,
+    binding: AppBindings(),
+    page: () => FaqScreen(),
   ),
 
   ////////////////// conversation  screen

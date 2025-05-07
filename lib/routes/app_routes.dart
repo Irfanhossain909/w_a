@@ -9,6 +9,11 @@ class AppRoutes {
   static const updatePasswordScreen = "/update-password-screen";
   static const forgotPasswordScreen = "/forgot-password-screen";
   static const personalInfoScreen = "/personal-info-screen";
+  static const profileEditScreen = "/profile-edit-screen";
+  static const aboutUsScreen = "/about-us-screen";
+  static const privicyAndPlicyScreen = "/privicy-policy-screen";
+  static const termsAndConditionScreen = "/terms-and-condition-screen";
+  static const faqScreen = "/faq-screen";
 
   ////////// Customer Screen ========================
   static const customerHomeScreen = "/customer-home-screen";
