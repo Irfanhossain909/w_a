@@ -4,6 +4,7 @@ class AppRoutes {
   static const notificationScreen = "/notification-screen";
   static const onBoardingScreen = "/on-boarding-screen";
   static const signInScreen = "/sign-in-screen";
+  static const signUpScreen = "/sign-up-screen";
 
   ////////// Customer Screen ========================
   static const customerHomeScreen = "/customer-home-screen";

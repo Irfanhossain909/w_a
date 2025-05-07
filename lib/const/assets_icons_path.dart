@@ -58,6 +58,8 @@ class AssetsIconsPath {
   static const String call = "assets/icons/call.png";
   static const String email = "assets/icons/email.png";
   static const String lock = "assets/icons/lock.png";
+  static const String user = "assets/icons/user.png";
+  static const String role = "assets/icons/role.png";
 
 
 

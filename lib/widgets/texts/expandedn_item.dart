@@ -1,168 +1,9 @@
-// import 'package:book_rite/const/assets_icons_path.dart';
-// import 'package:book_rite/widgets/app_image/app_image.dart';
-// import 'package:book_rite/widgets/texts/app_text.dart';
-// import 'package:flutter/material.dart';
-// import 'package:book_rite/const/app_colors.dart';
-// import 'package:book_rite/const/app_const.dart';
-// import 'package:book_rite/utils/app_size.dart';
-
-// class ExpandableRadioContainer extends StatefulWidget {
-//   @override
-//   _ExpandableRadioContainerState createState() =>
-//       _ExpandableRadioContainerState();
-// }
-
-// class _ExpandableRadioContainerState extends State<ExpandableRadioContainer>
-//     with TickerProviderStateMixin {
-//   bool isExpanded = false;
-//   String? selectedOption;
-//   late AnimationController _rotationController;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     _rotationController = AnimationController(
-//       duration: Duration(milliseconds: 400),
-//       vsync: this,
-//       upperBound: 0.5, // 180 degree
-//     );
-//   }
-
-//   @override
-//   void dispose() {
-//     _rotationController.dispose();
-//     super.dispose();
-//   }
-
-//   void toggleContainer() {
-//     setState(() {
-//       isExpanded = !isExpanded;
-//       if (isExpanded) {
-//         _rotationController.forward();
-//       } else {
-//         _rotationController.reverse();
-//       }
-//     });
-//   }
-
-//   void selectOption(String option) {
-//     setState(() {
-//       selectedOption = option;
-//       isExpanded = false;
-//       _rotationController.reverse();
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return GestureDetector(
-//       onTap: toggleContainer,
-//       child: Material(
-//         elevation:
-//             0.0, // AppInputWidgetTwo e elevation parameter chilo, ekhane 0
-//         shadowColor: AppColors.primary200,
-//         color: Colors.transparent,
-//         borderRadius: BorderRadius.circular(AppSize.width(value: 8.0)),
-//         child: Container(
-//           width: double.infinity,
-//           padding: EdgeInsets.all(AppSize.width(value: 10.0)),
-//           decoration: BoxDecoration(
-//             color: AppColors.white50.withOpacity(0.3), // background color match
-//             borderRadius: BorderRadius.circular(AppSize.width(value: 8.0)),
-//             border: Border.all(
-//               color: AppColors.primary200, // border color match
-//             ),
-//           ),
-//           child: AnimatedSize(
-//             duration: Duration(milliseconds: 500),
-//             curve: Curves.easeInOutCubic,
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Row(
-//                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                   children: [
-//                     Row(
-//                       children: [
-//                         AppImage(
-//                           path: AssetsIconsPath.userPro,
-//                           width: 24,
-//                           height: 24,
-//                         ),
-//                         AppText(data: selectedOption ?? "Select Option"),
-//                       ],
-//                     ),
-//                     RotationTransition(
-//                       turns: _rotationController,
-//                       child: Icon(
-//                         Icons.keyboard_arrow_down,
-//                         size: 28,
-//                         color: AppColors.primary, // optional: icon color match
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//                 AnimatedSwitcher(
-//                   duration: Duration(milliseconds: 400),
-//                   switchInCurve: Curves.easeInOutCubic,
-//                   switchOutCurve: Curves.easeInOutCubic,
-//                   transitionBuilder: (child, animation) {
-//                     return FadeTransition(
-//                       opacity: animation,
-//                       child: SizeTransition(
-//                         sizeFactor: animation,
-//                         axisAlignment: -1.0,
-//                         child: child,
-//                       ),
-//                     );
-//                   },
-//                   child:
-//                       isExpanded
-//                           ? Column(
-//                             key: ValueKey('ExpandedState'),
-//                             children: [
-//                               SizedBox(height: 16),
-//                               Divider(),
-//                               ListTile(
-//                                 title: Text('Customer'),
-//                                 trailing: Radio<String>(
-//                                   value: 'Customer',
-//                                   groupValue: selectedOption,
-//                                   onChanged: (value) {
-//                                     selectOption(value!);
-//                                   },
-//                                 ),
-//                                 onTap: () => selectOption('Customer'),
-//                               ),
-//                               ListTile(
-//                                 title: Text('Provider'),
-//                                 trailing: Radio<String>(
-//                                   value: 'Provider',
-//                                   groupValue: selectedOption,
-//                                   onChanged: (value) {
-//                                     selectOption(value!);
-//                                   },
-//                                 ),
-//                                 onTap: () => selectOption('Provider'),
-//                               ),
-//                             ],
-//                           )
-//                           : SizedBox(key: ValueKey('CollapsedState')),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-
-
 import 'package:flutter/material.dart';
 import 'package:w_a/const/app_colors.dart';
+import 'package:w_a/const/assets_icons_path.dart';
+import 'package:w_a/routes/bindings/app_auth_binding.dart';
 import 'package:w_a/utils/app_size.dart';
+import 'package:w_a/widgets/app_image/app_image.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 
 class ExpandableRadioContainer extends StatefulWidget {
@@ -270,19 +111,20 @@ class _ExpandableRadioContainerState extends State<ExpandableRadioContainer>
                     Row(
                       children: [
                         widget.prefix ??
-                            // AppImage(
-                            //   path: AssetsIconsPath.userPro,
-                            //   width: 24,
-                            //   height: 24,
-                            // ),
-                        const SizedBox(width: 8),
+                            AppImage(
+                              path: AssetsIconsPath.role,
+                              width: AppSize.width(value: 16),
+                              height: AppSize.width(value: 16),
+                            ),
+                        SizedBox(width: AppSize.width(value: 17)),
                         AppText(
                           data:
                               selectedOption ??
                               widget.hintText ??
                               "Select Option",
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.black200,
+                          fontSize: AppSize.width(value: 16),
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.subTitle,
                         ),
                       ],
                     ),
@@ -291,8 +133,8 @@ class _ExpandableRadioContainerState extends State<ExpandableRadioContainer>
                           turns: _rotationController,
                           child: Icon(
                             Icons.keyboard_arrow_down,
-                            size: 28,
-                            color: AppColors.black200,
+                            size: 16,
+                            color: AppColors.subTitle,
                           ),
                         ),
                   ],

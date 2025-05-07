@@ -170,7 +170,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
                   : widget.suffixIcon,
           hintText: widget.hintText,
           hintStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
-            color: AppColors.subTitle.withValues(alpha: .6),
+            color: AppColors.subTitle.withValues(alpha: .8),
           ),
           prefixIconConstraints:
               widget.prefixIconConstraints ??
