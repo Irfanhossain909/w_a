@@ -139,6 +139,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
               height: 2,
               fontFamily: AppConst.fontFamily1,
               fontWeight: FontWeight.w500,
+              color: AppColors.text,
             ),
         decoration: InputDecoration(
           errorStyle: TextStyle(backgroundColor: AppColors.white50),
