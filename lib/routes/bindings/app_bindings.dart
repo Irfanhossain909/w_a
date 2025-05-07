@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:w_a/screens/change_password_screen/controllers/change_password_screen_controller.dart';
+import 'package:w_a/screens/customer_bookin_details_screen.dart/controller/customer_booking_details_controller.dart';
 import 'package:w_a/screens/customer_bookmark_screen/controller/custom_bookmark_controller.dart';
 
 import 'package:w_a/screens/customer_check_availability_screen/controller/customer_check_availability_controller.dart';
@@ -20,6 +22,8 @@ class AppBindings extends Bindings {
     //Common for both Vustomer &  Provider===============
     Get.lazyPut(() => PersonalInfoController());
     Get.lazyPut(() => ProfileEditScreenController()); 
+    Get.lazyPut(()=> ChangePasswordScreenController());
+
 
     //==================== Customer Screens ==================
     // Get.lazyPut(() => CustomerHomeController());
@@ -28,6 +32,8 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => CustomerEventInfoController());
     Get.lazyPut(() => CustomerCheckAvailabilityController());
     Get.lazyPut(() => CustomerBookmarkController());
+    Get.lazyPut(() => CustomerBookmarkController());
+    Get.lazyPut(() => CustomerBookingDetailsController());
 
     //====================Provider Screens==================
     Get.lazyPut(() => ProviderNavigationScreenController());

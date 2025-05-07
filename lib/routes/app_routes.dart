@@ -10,6 +10,7 @@ class AppRoutes {
   static const forgotPasswordScreen = "/forgot-password-screen";
   static const personalInfoScreen = "/personal-info-screen";
   static const profileEditScreen = "/profile-edit-screen";
+  static const changePasswordScreen = "/change-password-screen";
   static const aboutUsScreen = "/about-us-screen";
   static const privicyAndPlicyScreen = "/privicy-policy-screen";
   static const termsAndConditionScreen = "/terms-and-condition-screen";
@@ -26,6 +27,8 @@ class AppRoutes {
       "/customer-booking-confirm-screen";
   static const customerQRcodeScreen = "/customer-qr-code-screen";
   static const customerBookmarkScreen = "/customer-bookmark-screen";
+  static const customerBookingScreen = "/customer-booking-screen";
+  static const customerBookingDetailsScreen = "/customer-booking-details-screen";
 
   //////////Provider Screeen ========================
   static const providerNavigationScreen = "/provider-navigation-screen";

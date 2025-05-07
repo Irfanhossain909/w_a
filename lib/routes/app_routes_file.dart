@@ -8,7 +8,10 @@ import 'package:w_a/screens/auth_screen/otp_verification_screen/otp_verification
 import 'package:w_a/screens/auth_screen/update_password_screen/update_password_screen.dart';
 import 'package:w_a/screens/auth_screen/sign_up_screen/sign_up_screen.dart';
 import 'package:w_a/screens/auth_screen/signin_screen/signin_screen.dart';
+import 'package:w_a/screens/change_password_screen/change_password_screen.dart';
+import 'package:w_a/screens/customer_bookin_details_screen.dart/controller/customer_booking_details_screen.dart';
 import 'package:w_a/screens/customer_booking_confirm_screen/customer_booking_confirm_screen.dart';
+import 'package:w_a/screens/customer_booking_screen/customer_booking_screen.dart';
 import 'package:w_a/screens/customer_bookmark_screen/customer_bookmark_screen.dart';
 import 'package:w_a/screens/customer_check_availability_screen/customer_check_avilability_screen.dart';
 import 'package:w_a/screens/customer_event_info_screen/customer_event_info_screen.dart';
@@ -152,6 +155,16 @@ List<GetPage> appRoutesFile = <GetPage>[
     binding: AppBindings(),
     page: () => ProviderEventInfoScreen(),
   ),
+  GetPage(
+    name: AppRoutes.customerBookingScreen,
+    binding: AppBindings(),
+    page: () => CustomerBookingScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.customerBookingDetailsScreen,
+    binding: AppBindings(),
+    page: () => CustomerBookingDetailsScreen(),
+  ),
 
   ////////////////////  profile
   ///
@@ -164,6 +177,11 @@ List<GetPage> appRoutesFile = <GetPage>[
     name: AppRoutes.profileEditScreen,
     binding: AppBindings(),
     page: () => ProfileEditScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.changePasswordScreen,
+    binding: AppBindings(),
+    page: () => ChangePasswordScreen(),
   ),
   GetPage(
     name: AppRoutes.aboutUsScreen,

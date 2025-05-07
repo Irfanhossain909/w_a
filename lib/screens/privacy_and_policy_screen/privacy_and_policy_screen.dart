@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/screens/privacy_and_policy_screen/controllers/privacy_and_policy_screen_controller.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/widgets/appbar/custom_appbar.dart';

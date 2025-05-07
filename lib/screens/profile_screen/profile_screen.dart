@@ -88,9 +88,9 @@ class ProfileScreen extends StatelessWidget {
                                     title: "Change Password",
                                     iconPath: AssetsIconsPath.lock,
                                     onTap: () {
-                                      // Get.toNamed(
-                                      //   // AppRoutes.changePasswordScreen,
-                                      // );
+                                      Get.toNamed(
+                                        AppRoutes.changePasswordScreen,
+                                      );
                                     },
                                   ),
                                   AccountCardWidget(
