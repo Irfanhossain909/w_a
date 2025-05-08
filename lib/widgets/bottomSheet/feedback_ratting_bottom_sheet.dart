@@ -83,6 +83,8 @@ class FeedBackRattinigBottomSheet extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: AppSize.width(value: 40)),
             child: AppButton(
               title: "Submit",
+              borderRadius: BorderRadius.circular(12),
+
               onTap: () {
                 Get.back(); // Close bottom sheet
                 AppSnackBar.message("You rated: ${controller.rating.value}");

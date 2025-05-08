@@ -143,7 +143,7 @@ class CustomerReservationCard extends StatelessWidget {
                           6,
                           (index) => AppText(
                             data: ":",
-                            fontSize: AppSize.width(value: 12),
+                            fontSize: AppSize.width(value: 13),
                             fontWeight: FontWeight.w500,
                             color: AppColors.subTitle,
                           ),

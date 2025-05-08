@@ -4,6 +4,7 @@ import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/const/assets_images_path.dart';
 import 'package:w_a/routes/app_routes.dart';
+import 'package:w_a/screens/customer_navigation_screen/controllers/customer_navigation_screen_controller.dart';
 import 'package:w_a/screens/provider_navigation_screen/controllers/provider_navigation_screen_controller.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/utils/gap.dart';
@@ -14,8 +15,13 @@ import 'package:w_a/widgets/texts/app_input_widget_three.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key, required this.providerNavigationControllerr});
-  final ProviderNavigationScreenController providerNavigationControllerr;
+  const ProfileScreen({
+    super.key,
+    this.providerNavigationControllerr,
+    this.customerNavigationController,
+  });
+  final ProviderNavigationScreenController? providerNavigationControllerr;
+  final CustomerNavigationScreenController? customerNavigationController;
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +54,8 @@ class ProfileScreen extends StatelessWidget {
                             },
                           ),
                           AccountCardWidget(
-                            title: "Portfolio",
-                            iconPath: AssetsIconsPath.calenderNon,
+                            title: "Lunguage",
+                            iconPath: AssetsIconsPath.lunguage,
                             onTap: () {
                               // Get.toNamed(AppRoutes.portfolioScreen);
                             },
@@ -61,6 +67,7 @@ class ProfileScreen extends StatelessWidget {
                               Get.toNamed(AppRoutes.faqScreen);
                             },
                           ),
+
                           // AccountCardWidget(
                           //   title: "Manage Bank Account",
                           //   iconPath: AssetsIconsPath.setting,
@@ -99,7 +106,7 @@ class ProfileScreen extends StatelessWidget {
                                     onTap: () {
                                       Get.dialog(
                                         Dialog(
-                                          backgroundColor: AppColors.white100,
+                                          backgroundColor: AppColors.boxBg,
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(
                                               AppSize.width(value: 16),
@@ -126,15 +133,25 @@ class ProfileScreen extends StatelessWidget {
                                                     value: 10,
                                                   ),
                                                 ),
-                                                AppText(
-                                                  data:
-                                                      "Want to Delete Account !",
-                                                  fontSize: AppSize.width(
-                                                    value: 20,
+                                                ShaderMask(
+                                                  shaderCallback: (
+                                                    Rect bounds,
+                                                  ) {
+                                                    return AppColors
+                                                        .customGradient
+                                                        .createShader(bounds);
+                                                  },
+                                                  child: AppText(
+                                                    data:
+                                                        "Want to Delete Account !",
+                                                    fontSize: AppSize.width(
+                                                      value: 20,
+                                                    ),
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Colors.white,
                                                   ),
-                                                  fontWeight: FontWeight.w600,
-                                                  color: AppColors.black500,
                                                 ),
+
                                                 Gap(
                                                   height: AppSize.width(
                                                     value: 10,
@@ -145,10 +162,12 @@ class ProfileScreen extends StatelessWidget {
                                                       "Please confirm your password to remove your account.",
                                                   textAlign: TextAlign.center,
                                                   fontSize: AppSize.width(
-                                                    value: 14,
+                                                    value: AppSize.width(
+                                                      value: 16,
+                                                    ),
                                                   ),
                                                   fontWeight: FontWeight.w400,
-                                                  color: AppColors.black400,
+                                                  color: AppColors.subTitle,
                                                 ),
 
                                                 const SizedBox(height: 20),
@@ -157,12 +176,12 @@ class ProfileScreen extends StatelessWidget {
                                                   isPassWord: true,
                                                   minLines: 1,
                                                   maxLines: 1,
-                                                  fillColor: AppColors.fill,
+                                                  fillColor: AppColors.black700,
                                                   border: OutlineInputBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                           AppSize.width(
-                                                            value: 10.0,
+                                                            value: 16,
                                                           ),
                                                         ),
                                                     borderSide: BorderSide.none,
@@ -182,40 +201,7 @@ class ProfileScreen extends StatelessWidget {
                                                   ),
                                                 ),
                                                 const SizedBox(height: 20),
-                                                Row(
-                                                  children: [
-                                                    Expanded(
-                                                      child: AppButton(
-                                                        title: "Cancel",
-                                                        titleColor:
-                                                            AppColors.white100,
-                                                        decoration: BoxDecoration(
-                                                          color:
-                                                              AppColors
-                                                                  .white100,
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                AppSize.width(
-                                                                  value: 10,
-                                                                ),
-                                                              ),
-                                                          border: Border.all(
-                                                            color:
-                                                                AppColors
-                                                                    .black600, // সব সাইডে এই রঙের বর্ডার হবে
-                                                            width: 1,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    const SizedBox(width: 10),
-                                                    Expanded(
-                                                      child: AppButton(
-                                                        title: "Log Out",
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
+                                                GrediantYesNoButton(),
                                               ],
                                             ),
                                           ),
@@ -263,7 +249,7 @@ class ProfileScreen extends StatelessWidget {
                     onTap: () {
                       Get.dialog(
                         Dialog(
-                          backgroundColor: AppColors.white100,
+                          backgroundColor: AppColors.boxBg,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(
                               AppSize.width(value: 16),
@@ -279,42 +265,25 @@ class ProfileScreen extends StatelessWidget {
                                   alignment: Alignment.topRight,
                                   child: GestureDetector(
                                     onTap: () => Get.back(),
-                                    child: Icon(Icons.close),
+                                    child: Icon(
+                                      Icons.close,
+                                      color: AppColors.subTitle,
+                                    ),
                                   ),
                                 ),
 
                                 AppText(
                                   data: "Do you want to log out your profile?",
                                   textAlign: TextAlign.center,
-                                  fontSize: AppSize.width(value: 14),
+                                  fontSize: AppSize.width(value: 20),
                                   fontWeight: FontWeight.w400,
-                                  color: AppColors.black400,
+                                  color: AppColors.subTitle,
                                 ),
                                 Gap(height: AppSize.width(value: 40)),
 
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      child: AppButton(
-                                        title: "Reject",
-                                        titleColor: AppColors.blue,
-                                        decoration: BoxDecoration(
-                                          color: AppColors.white100,
-                                          borderRadius: BorderRadius.circular(
-                                            AppSize.width(value: 10),
-                                          ),
-                                          border: Border.all(
-                                            color:
-                                                AppColors
-                                                    .green, // সব সাইডে এই রঙের বর্ডার হবে
-                                            width: 1,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Gap(width: AppSize.width(value: 10)),
-                                    Expanded(child: AppButton(title: "Delete")),
-                                  ],
+                                GrediantYesNoButton(
+                                  first: "Cancel",
+                                  second: "Logout",
                                 ),
                               ],
                             ),
@@ -330,6 +299,78 @@ class ProfileScreen extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class GrediantYesNoButton extends StatelessWidget {
+  final String? first;
+  final String? second;
+  const GrediantYesNoButton({super.key, this.first, this.second});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: Container(
+            padding: const EdgeInsets.all(2), // Border width
+            decoration: BoxDecoration(
+              gradient: AppColors.customGradient,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.boxBg, // Inner button background
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () {
+                    // Button action here
+                  },
+                  borderRadius: BorderRadius.circular(12),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 12,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // Black icon with black background
+                        ShaderMask(
+                          shaderCallback: (Rect bounds) {
+                            return AppColors.customGradient.createShader(
+                              bounds,
+                            );
+                          },
+                          child: AppText(
+                            data: first ?? "Cancel",
+                            fontSize: AppSize.width(value: 20),
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(width: 10),
+        Expanded(
+          child: AppButton(
+            title: second ?? "Log Out",
+            titleSize: AppSize.width(value: 20),
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+      ],
     );
   }
 }

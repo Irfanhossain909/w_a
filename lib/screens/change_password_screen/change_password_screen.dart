@@ -1,9 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/screens/change_password_screen/controllers/change_password_screen_controller.dart';
 import 'package:w_a/utils/app_size.dart';
+import 'package:w_a/widgets/appbar/custom_appbar.dart';
+import 'package:w_a/widgets/button/app_button.dart';
 import 'package:w_a/widgets/texts/app_input_widget_three.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 
@@ -16,132 +17,102 @@ class ChangePasswordScreen extends StatelessWidget {
       init: ChangePasswordScreenController(),
       builder: (controller) {
         return Scaffold(
-          appBar: AppBar(
-            centerTitle: true,
-            title: AppText(
-              data: "Change Password",
-              fontWeight: FontWeight.w400,
-              fontSize: AppSize.width(value: 20),
-            ),
-            bottom: PreferredSize(
-              preferredSize: Size.fromHeight(2),
-              child: Container(
-                width: Get.width,
-                height: 1,
-                color: AppColors.black500,
-              ),
-            ),
-          ),
+          appBar: CustomAppBar(title: "Change Password"),
           body: Padding(
             padding: EdgeInsets.all(AppSize.width(value: 10.0)),
             child: SingleChildScrollView(
               child: Form(
                 key: controller.changePasswordKey,
-                child: Column(
-                  children: [
-                    AppInputWidgetThree(
-                      controller: controller.oldPasswordTextEditingController,
-                      title: "Current Password",
-                      isPassWord: true,
-                      minLines: 1,
-                      maxLines: 1,
-                      hintText: "Current Password",
-                      fillColor: AppColors.fill,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(
-                          AppSize.width(value: 10.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      AppInputWidgetThree(
+                        controller: controller.oldPasswordTextEditingController,
+                        title: "Current Password",
+                        isPassWord: true,
+                        minLines: 1,
+                        maxLines: 1,
+                        hintText: "Current Password",
+                        fillColor: AppColors.boxBg,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(
+                            AppSize.width(value: 10.0),
+                          ),
+                          borderSide: BorderSide.none,
                         ),
-                        borderSide: BorderSide.none,
-                      ),
-                      errBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(
-                          AppSize.width(value: 10.0),
+                        errBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(
+                            AppSize.width(value: 10.0),
+                          ),
+                          borderSide: const BorderSide(
+                            color: AppColors.warning,
+                          ),
                         ),
-                        borderSide: const BorderSide(color: AppColors.warning),
                       ),
-                    ),
-                    AppInputWidgetThree(
-                      controller: controller.newPasswordTextEditingController,
-                      title: "New Password",
-                      isPassWord: true,
-                      minLines: 1,
-                      maxLines: 1,
-                      hintText: "New Password",
-                      fillColor: AppColors.fill,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(
-                          AppSize.width(value: 10.0),
+                      AppInputWidgetThree(
+                        controller: controller.newPasswordTextEditingController,
+                        title: "New Password",
+                        isPassWord: true,
+                        minLines: 1,
+                        maxLines: 1,
+                        hintText: "New Password",
+                        fillColor: AppColors.boxBg,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(
+                            AppSize.width(value: 10.0),
+                          ),
+                          borderSide: BorderSide.none,
                         ),
-                        borderSide: BorderSide.none,
-                      ),
-                      errBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(
-                          AppSize.width(value: 10.0),
+                        errBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(
+                            AppSize.width(value: 10.0),
+                          ),
+                          borderSide: const BorderSide(
+                            color: AppColors.warning,
+                          ),
                         ),
-                        borderSide: const BorderSide(color: AppColors.warning),
                       ),
-                    ),
-                    AppInputWidgetThree(
-                      controller:
-                          controller.confirmPasswordTextEditingController,
-                      secondController:
-                          controller.newPasswordTextEditingController,
-                      isSecondaryPassWord: true,
-                      title: "Confirm Password",
-                      isPassWord: true,
-                      minLines: 1,
-                      maxLines: 1,
-                      hintText: "Confirm Password",
-                      fillColor: AppColors.fill,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(
-                          AppSize.width(value: 10.0),
+                      AppInputWidgetThree(
+                        controller:
+                            controller.confirmPasswordTextEditingController,
+                        secondController:
+                            controller.newPasswordTextEditingController,
+                        isSecondaryPassWord: true,
+                        title: "Confirm Password",
+                        isPassWord: true,
+                        minLines: 1,
+                        maxLines: 1,
+                        hintText: "Confirm Password",
+                        fillColor: AppColors.boxBg,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(
+                            AppSize.width(value: 10.0),
+                          ),
+                          borderSide: BorderSide.none,
                         ),
-                        borderSide: BorderSide.none,
-                      ),
-                      errBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(
-                          AppSize.width(value: 10.0),
+                        errBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(
+                            AppSize.width(value: 10.0),
+                          ),
+                          borderSide: const BorderSide(
+                            color: AppColors.warning,
+                          ),
                         ),
-                        borderSide: const BorderSide(color: AppColors.warning),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          bottomNavigationBar: GestureDetector(
-            onTap: () {
-              controller.clickChangePasswordButton();
-            },
-            child: Obx(
-              () => Container(
-                margin: EdgeInsets.all(AppSize.width(value: 10)),
-                width: Get.width,
-                height: AppSize.height(value: 50),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: AppColors.primary,
-                  borderRadius: BorderRadius.circular(
-                    AppSize.width(value: 8.0),
+                      // Spacer(),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: AppSize.width(value: 134),
+                        ),
+                        child: AppButton(
+                          title: "Update",
+                          titleSize: AppSize.width(value: 20),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                child:
-                    controller.isLoading.value
-                        ? SizedBox(
-                          width: AppSize.width(value: 30),
-                          height: AppSize.width(value: 30),
-                          child: const CircularProgressIndicator(
-                            color: AppColors.white50,
-                          ),
-                        )
-                        : const AppText(
-                          data: "Update",
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.white50,
-                        ),
               ),
             ),
           ),

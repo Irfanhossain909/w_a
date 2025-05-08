@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:w_a/const/assets_icons_path.dart';
+import 'package:w_a/screens/customer_booking_screen/customer_booking_screen.dart';
 import 'package:w_a/screens/customer_home_screen/customer_home_screen.dart';
 import 'package:w_a/screens/customer_navigation_screen/controllers/customer_navigation_screen_controller.dart';
+import 'package:w_a/screens/profile_screen/profile_screen.dart';
 import 'package:w_a/widgets/app_image/app_image.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 
 class CustomerNavigationScreen extends StatelessWidget {
-  const CustomerNavigationScreen({super.key});
+   const CustomerNavigationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    
     return GetBuilder(
       init: CustomerNavigationScreenController(),
       builder: (controller) {
@@ -21,11 +24,13 @@ class CustomerNavigationScreen extends StatelessWidget {
               children: [
                 // ////////// index 0
                 CustomerHomeScreen(),
-                // ProviderHomeScreen(),
+                CustomerBookingScreen(),
                 // // ////////// index 1
                 // ProviderServiceMainScreen(),
                 // // /////////// index 2
-                // ChatScreen(),
+                ProfileScreen(
+                  customerNavigationController: controller,
+                ),
                 // // /////////// index 3
                 // ProviderAccountScreen(providerNavigationControllerr: controller,
 
@@ -71,7 +76,7 @@ class CustomerNavigationScreen extends StatelessWidget {
                   Expanded(
                     child: navItem(
                       iconPath: AssetsIconsPath.icAccountNav,
-                      label: "Account",
+                      label: "Profile",
                       isSelected: controller.selectedIndex.value == 3,
                       onTap: () => controller.changeIndex(3),
                     ),

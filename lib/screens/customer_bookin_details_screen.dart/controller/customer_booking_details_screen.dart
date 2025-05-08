@@ -180,6 +180,7 @@ class CustomerBookingDetailsScreen extends StatelessWidget {
                 title: "Review",
                 titleSize: AppSize.width(value: 20),
                 titleColor: AppColors.black500,
+                borderRadius: BorderRadius.circular(12),
                 onTap: () {
                   Get.bottomSheet(
                     FeedBackRattinigBottomSheet(controller: controller),
@@ -193,7 +194,6 @@ class CustomerBookingDetailsScreen extends StatelessWidget {
     );
   }
 }
-
 
 class ProviderDetailsCard extends StatelessWidget {
   const ProviderDetailsCard({super.key});
