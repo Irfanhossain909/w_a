@@ -42,12 +42,12 @@ class ExpandableTile extends StatelessWidget {
   final int index;
 
   const ExpandableTile({
-    Key? key,
+    super.key,
     required this.title,
     required this.description,
     required this.controller,
     required this.index,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -7,6 +7,11 @@ enum ServiceType { pending, accepted, completed }
 class CustomerBookingScreenController extends GetxController {
   late ServiceCollection serviceCollectionData;
   var selectedType = ServiceType.pending.obs;
+  var rating = 3.0.obs;
+
+  void updateRatting(double value) {
+    rating.value = value;
+  }
 
   @override
   void onInit() {

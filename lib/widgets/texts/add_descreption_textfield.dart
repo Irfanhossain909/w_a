@@ -53,8 +53,11 @@ class AppDescriptionTextField extends StatelessWidget {
             maxLines: null,
             expands: true,
             textAlignVertical: TextAlignVertical.top,
+            style: TextStyle(color: AppColors.text),
+
             decoration: InputDecoration(
               hintText: hintText,
+              hintStyle: TextStyle(color: AppColors.subTitle.withOpacity(0.6)),
               filled: true,
               fillColor: fillColor ?? AppColors.white400,
               border: border ?? outlineBorder,

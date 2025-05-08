@@ -41,9 +41,7 @@ class CustomerBookingScreen extends StatelessWidget {
                       child: CustomerReservationCard(
                         service: service,
                         onTap: () {
-                          Get.toNamed(
-                            AppRoutes.customerBookingDetailsScreen,
-                          );
+                          Get.toNamed(AppRoutes.customerBookingDetailsScreen);
                         },
                       ),
                     );
@@ -70,7 +68,6 @@ class CustomerReservationCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        height: AppSize.height(value: 116),
         decoration: BoxDecoration(
           color: AppColors.cardBg,
           borderRadius: BorderRadius.circular(8),
@@ -90,119 +87,117 @@ class CustomerReservationCard extends StatelessWidget {
               ),
               const SizedBox(width: 10), // Image ar text er moddhe gap
               Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 16),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        flex: 3,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            AppText(
-                              data: "Booking ID",
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.subTitle,
-                            ),
-                            AppText(
-                              data: "Category",
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.subTitle,
-                            ),
-                            AppText(
-                              data: "Event Name",
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.subTitle,
-                            ),
-                            AppText(
-                              data: "Date",
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.subTitle,
-                            ),
-                            AppText(
-                              data: "Booking Amount",
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.subTitle,
-                            ),
-                            AppText(
-                              data: "Booking Amount",
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.subTitle,
-                            ),
-                          ],
-                        ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          AppText(
+                            data: "Booking ID",
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.subTitle,
+                          ),
+                          AppText(
+                            data: "Category",
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.subTitle,
+                          ),
+                          AppText(
+                            data: "Event Name",
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.subTitle,
+                          ),
+                          AppText(
+                            data: "Date",
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.subTitle,
+                          ),
+                          AppText(
+                            data: "Booking Amount",
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.subTitle,
+                          ),
+                          AppText(
+                            data: "Booking Amount",
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.subTitle,
+                          ),
+                        ],
                       ),
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: List.generate(
-                            6,
-                            (index) => AppText(
-                              data: ":",
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.subTitle,
-                            ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: List.generate(
+                          6,
+                          (index) => AppText(
+                            data: ":",
+                            fontSize: AppSize.width(value: 12),
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.subTitle,
                           ),
                         ),
                       ),
-                      Expanded(
-                        flex: 4,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            AppText(
-                              data: "1458",
-                              fontSize: AppSize.width(value: 12),
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.subTitle,
-                            ),
-                            AppText(
-                              data: "Health & Wellness",
-                              fontSize: AppSize.width(value: 12),
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.subTitle,
-                              maxLines: 1,
-                            ),
-                            AppText(
-                              data: "Riverside Medical Center",
-                              fontSize: AppSize.width(value: 12),
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.subTitle,
-                            ),
-                            AppText(
-                              data: "25 jun 2025",
-                              fontSize: AppSize.width(value: 12),
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.subTitle,
-                            ),
-                            AppText(
-                              data: "300",
-                              fontSize: AppSize.width(value: 12),
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.subTitle,
-                            ),
-                            AppText(
-                              data: "Brooklyn, New York",
-                              fontSize: AppSize.width(value: 12),
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.subTitle,
-                            ),
-                          ],
-                        ),
+                    ),
+                    Expanded(
+                      flex: 4,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          AppText(
+                            data: "1458",
+                            fontSize: AppSize.width(value: 12),
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.subTitle,
+                          ),
+                          AppText(
+                            data: "Health & Wellness",
+                            fontSize: AppSize.width(value: 12),
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.subTitle,
+                            maxLines: 1,
+                          ),
+                          AppText(
+                            data: "Riverside Medical Center",
+                            fontSize: AppSize.width(value: 12),
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.subTitle,
+                            maxLines: 1,
+                          ),
+                          AppText(
+                            data: "25 jun 2025",
+                            fontSize: AppSize.width(value: 12),
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.subTitle,
+                          ),
+                          AppText(
+                            data: "300",
+                            fontSize: AppSize.width(value: 12),
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.subTitle,
+                          ),
+                          AppText(
+                            data: "Brooklyn, New York",
+                            fontSize: AppSize.width(value: 12),
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.subTitle,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],

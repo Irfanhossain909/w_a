@@ -62,6 +62,7 @@ class AppColors {
   static const Color highlight = Color(0xff8DB501);
   static const Color yellow = Color(0xffFFBE00);
   static const Color error = Color(0xffFC6057);
+  static const Color bottmSheet = Color(0xff2F3435);
 
   Color black50 = Color(0xffe7e7e7);
   static const Color black100 = Color(0xffb6b6b6);
@@ -86,15 +87,7 @@ class AppColors {
   static const Color white900 = Color(0xff656565);
 
   //==============grediant========================
-  // static const Gradient customGradient = LinearGradient(
-  //   colors: [
-  //     Color(0xFFFFD858), // Teal
-  //     Color(0xFFFFB953), // Pink
-  //     Color(0xFFFF954E), // Pink
-  //   ],
-  //   begin: Alignment(0.00, 1.00),
-  //   end: Alignment(0.50, 0.50),
-  // );
+  
   static const Gradient customGradient = LinearGradient(
     colors: [
       Color(0xFFFFD858), // Start color
