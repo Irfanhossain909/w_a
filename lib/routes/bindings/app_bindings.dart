@@ -15,15 +15,15 @@ import 'package:w_a/screens/provider_booked_client_screen/controller/provider_bo
 import 'package:w_a/screens/provider_booking_details_screen/controller/provider_booking_details_controller.dart';
 import 'package:w_a/screens/provider_event_info_screen.dart/controller/provider_event_info_screen.dart';
 import 'package:w_a/screens/provider_navigation_screen/controllers/provider_navigation_screen_controller.dart';
+import 'package:w_a/screens/provider_qrcode_scanner/provider_qrcode_scanner.dart';
 
 class AppBindings extends Bindings {
   @override
   dependencies() {
     //Common for both Vustomer &  Provider===============
     Get.lazyPut(() => PersonalInfoController());
-    Get.lazyPut(() => ProfileEditScreenController()); 
-    Get.lazyPut(()=> ChangePasswordScreenController());
-
+    Get.lazyPut(() => ProfileEditScreenController());
+    Get.lazyPut(() => ChangePasswordScreenController());
 
     //==================== Customer Screens ==================
     // Get.lazyPut(() => CustomerHomeController());
@@ -42,6 +42,7 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => ProviderAddEventController());
     Get.lazyPut(() => ProviderEventInfoController());
     Get.lazyPut(() => ProfileController());
+    Get.lazyPut(() => ProviderQrCodeScannerScreen());
     // Get.lazyPut(() => AddAndEditPostScreenController());
     // Get.lazyPut(() => AddPostSuccessfullyScreenController());
     // Get.lazyPut(() => ServicesScreenController());

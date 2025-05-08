@@ -29,6 +29,7 @@ class AppRoutes {
   static const customerBookmarkScreen = "/customer-bookmark-screen";
   static const customerBookingScreen = "/customer-booking-screen";
   static const customerBookingDetailsScreen = "/customer-booking-details-screen";
+  static const subscriptionsScreen = "/subscriptions-screen";
 
   //////////Provider Screeen ========================
   static const providerNavigationScreen = "/provider-navigation-screen";
@@ -39,6 +40,7 @@ class AppRoutes {
   static const providerAddEventScreen = "/provider-add-event-screen";
   static const providerEventInfoScreen = "/provider-event-info-screen";
   static const profileScreen = "/profile-screen";
+  static const providerQrCodeScannerScreen = "/profile-qrcode-scanner-screen";
   // static const initial = "/";
   // static const errorScreen = "/error";
   // static const signIn = "/sign-in";

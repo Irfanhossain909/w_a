@@ -6,8 +6,6 @@ import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/widgets/appbar/custom_appbar.dart';
 import 'package:w_a/widgets/button/app_button.dart';
 import 'package:w_a/widgets/texts/app_input_widget_three.dart';
-import 'package:w_a/widgets/texts/app_text.dart';
-
 class ChangePasswordScreen extends StatelessWidget {
   const ChangePasswordScreen({super.key});
 
