@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/routes/app_routes_file.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.appBg,
       ),
       // Scaffold background color
-      initialRoute: AppRoutes.providerNavigationScreen,
+      initialRoute: AppRoutes.subscriptionsScreen,
       getPages: appRoutesFile,
     );
   }

@@ -73,6 +73,7 @@ class AssetsIconsPath {
   static const String logout = "assets/icons/logout.png";
   static const String editImg = "assets/icons/edit_img.png";
   static const String lunguage = "assets/icons/language.png";
+  static const String indicate = "assets/icons/indicate.png";
 
 
 }
