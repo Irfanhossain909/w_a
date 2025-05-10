@@ -20,6 +20,17 @@ class AppCalenderController extends GetxController {
     DateTime(2025, 5, 20),
   ];
 
+  final highlightedDatesForCustomer = <DateTime>[
+    DateTime(2025, 5, 12),
+    DateTime(2025, 5, 15),
+    DateTime(2025, 5, 16),
+    DateTime(2025, 5, 17),
+    DateTime(2025, 5, 18),
+    DateTime(2025, 5, 20),
+    DateTime(2025, 5, 25),
+    DateTime(2025, 5, 26),
+  ];
+
   void selectMonth(String monthName) {
     int month = months.indexOf(monthName) + 1;
     focusedDay.value = DateTime(focusedDay.value.year, month, 1);
