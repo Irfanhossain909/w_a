@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_images_path.dart';
-import 'package:w_a/screens/chat_screen%20copy/controllers/chat_screen_controller.dart';
+import 'package:w_a/routes/app_routes.dart';
+import 'package:w_a/screens/network_screen/controllers/network_screen_controller.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/utils/gap.dart';
 import 'package:w_a/widgets/app_image/app_image_circular.dart';
 import 'package:w_a/widgets/button/app_button.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 
-class ChatScreen extends StatelessWidget {
-  const ChatScreen({super.key});
+class NetworkScreen extends StatelessWidget {
+  const NetworkScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder(
-      init: ChatScreenController(),
+      init: NetworkScreenController(),
       builder: (controller) {
         return Scaffold(
           appBar: PreferredSize(
@@ -84,7 +85,9 @@ class ChatScreen extends StatelessWidget {
                                   title: "Get Started",
                                   titleSize: AppSize.width(value: 20),
                                   onTap: () {
-                                    // Get.toNamed()
+                                    Get.offNamed(
+                                      AppRoutes.createCommiunityScreen,
+                                    );
                                   },
                                 ),
                               ),

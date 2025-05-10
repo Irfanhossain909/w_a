@@ -7,7 +7,7 @@ import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/routes/app_routes_file.dart';
-import 'package:w_a/screens/chat_screen%20copy/chat_screen.dart';
+import 'package:w_a/screens/network_screen/network_screen.dart';
 import 'package:w_a/screens/profile_screen/profile_screen.dart';
 import 'package:w_a/screens/provider_add_event_screen/provider_addevent_screen.dart';
 import 'package:w_a/screens/provider_home_screen/provider_home_screen.dart';
@@ -48,7 +48,7 @@ class ProviderNavigationScreen extends StatelessWidget {
                 // Your screens here...
                 ProviderHomeScreen(),
                 ProviderAddEventScreen(),
-                ChatScreen(),
+                NetworkScreen(),
                 ProfileScreen(
                   providerNavigationControllerr: providerNavigationControllerr,
                 ),

@@ -87,7 +87,7 @@ class AppColors {
   static const Color white900 = Color(0xff656565);
 
   //==============grediant========================
-  
+
   static const Gradient customGradient = LinearGradient(
     colors: [
       Color(0xFFFFD858), // Start color
@@ -97,5 +97,10 @@ class AppColors {
     stops: [0.3, 0.6, 1.0],
     begin: Alignment(0.00, 7),
     end: Alignment(1.00, 0.50), // End at left
+  );
+  static const Gradient customGradient2 = LinearGradient(
+    begin: Alignment(0.50, -0.00),
+    end: Alignment(0.50, 1.00),
+    colors: [ Color(0xFFFEFED6),  Color(0xFFFCAC43)],
   );
 }

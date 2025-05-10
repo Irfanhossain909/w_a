@@ -74,6 +74,12 @@ class AssetsIconsPath {
   static const String editImg = "assets/icons/edit_img.png";
   static const String lunguage = "assets/icons/language.png";
   static const String indicate = "assets/icons/indicate.png";
+  static const String groupColor = "assets/icons/Group_color.png";
+  static const String addwithColor = "assets/icons/add_with_color.png";
+  static const String gift = "assets/icons/gift.png";
+  static const String imageChat = "assets/icons/image.png";
+  static const String vedio = "assets/icons/video.png";
+  static const String sendMsg = "assets/icons/Send.png";
 
 
 }

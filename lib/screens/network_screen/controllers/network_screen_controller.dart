@@ -1,8 +1,7 @@
-
 import 'package:get/get.dart';
-import 'package:w_a/screens/chat_screen%20copy/models/chat_model.dart';
+import 'package:w_a/screens/network_screen/models/chat_model.dart';
 
-class ChatScreenController extends GetxController {
+class NetworkScreenController extends GetxController {
   RxBool isLoading = true.obs;
   // AppChatAndConversionRepository appChatAndConversionRepository = AppChatAndConversionRepository();
 

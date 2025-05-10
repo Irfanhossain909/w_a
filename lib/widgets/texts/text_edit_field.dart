@@ -12,6 +12,8 @@ class TextEditField extends StatelessWidget {
   final InputDecoration? decoration;
   final Color? hintColor;
   final double? hintSize;
+  final double? containerHeight;
+  final int? maxLines;
 
   const TextEditField({
     super.key,
@@ -23,19 +25,20 @@ class TextEditField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.decoration,
     this.hintColor,
-    this.hintSize,
+    this.hintSize, this.containerHeight, this.maxLines,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: AppSize.width(value: double.infinity),
-      height: AppSize.width(value: 52),
+      height: AppSize.width(value:containerHeight ?? 52),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: AppColors.boxBg,
       ),
       child: TextFormField(
+        maxLines: maxLines,
         controller: controller,
         style: TextStyle(color: AppColors.text),
         obscureText: obscureText,
@@ -43,6 +46,7 @@ class TextEditField extends StatelessWidget {
         decoration:
             decoration ??
             InputDecoration(
+            
               hintText: hintText,
               hintStyle: TextStyle(
                 color:
