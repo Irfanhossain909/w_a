@@ -18,7 +18,7 @@ import 'package:w_a/screens/provider_booking_details_screen/controller/provider_
 import 'package:w_a/screens/provider_event_info_screen.dart/controller/provider_event_info_screen.dart';
 import 'package:w_a/screens/provider_navigation_screen/controllers/provider_navigation_screen_controller.dart';
 import 'package:w_a/screens/provider_qrcode_scanner/provider_qrcode_scanner.dart';
-import 'package:w_a/screens/user_booking_date_time_screen/controller/app_celender_controller.dart';
+import 'package:w_a/screens/app_calender/controller/app_celender_controller.dart';
 
 class AppBindings extends Bindings {
   @override
@@ -29,7 +29,7 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => ChangePasswordScreenController());
     Get.lazyPut(() => NetworkScreenController());
     Get.lazyPut(() => ConversationScreenController());
-    Get.lazyPut(() => UserBookingDateTimeController());
+    Get.lazyPut(() => AppCalenderController());
 
     //==================== Customer Screens ==================
     // Get.lazyPut(() => CustomerHomeController());

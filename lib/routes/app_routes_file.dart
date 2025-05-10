@@ -38,6 +38,7 @@ import 'package:w_a/screens/provider_home_screen/provider_home_screen.dart';
 import 'package:w_a/screens/provider_navigation_screen/controllers/provider_navigation_screen_controller.dart';
 import 'package:w_a/screens/provider_navigation_screen/provider_navigation_screen.dart';
 import 'package:w_a/screens/provider_qrcode_scanner/provider_qrcode_scanner.dart';
+import 'package:w_a/screens/provider_time_management_screen/provider_time_management_screen.dart';
 import 'package:w_a/screens/splash_screen/splash_screen.dart';
 import 'package:w_a/screens/subscriptions_screen/subscriptions_screen.dart';
 import 'package:w_a/screens/terms_and_condition_screen/terms_and_condition_screen.dart';
@@ -255,6 +256,11 @@ List<GetPage> appRoutesFile = <GetPage>[
     name: AppRoutes.providerChackBookingScreen,
     binding: AppBindings(),
     page: () => ProviderChackBookingScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.providerTimemanagementScreen,
+    binding: AppBindings(),
+    page: () => ProviderTimeManagementScreen(),
   ),
 
   // ////////////////// account

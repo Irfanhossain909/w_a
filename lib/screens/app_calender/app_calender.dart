@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:w_a/const/app_colors.dart';
-import 'package:w_a/screens/user_booking_date_time_screen/controller/app_celender_controller.dart';
+import 'package:w_a/screens/app_calender/controller/app_celender_controller.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 
@@ -35,7 +35,7 @@ class AppCalender extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final calendarController = Get.put(UserBookingDateTimeController());
+    final calendarController = Get.put(AppCalenderController());
     String currentMonth = months[focusedDay.month - 1];
     int currentYear = focusedDay.year;
 

@@ -53,13 +53,24 @@ class ProfileScreen extends StatelessWidget {
                               Get.toNamed(AppRoutes.personalInfoScreen);
                             },
                           ),
+
                           AccountCardWidget(
-                            title: "Lunguage",
-                            iconPath: AssetsIconsPath.lunguage,
+                            title: "Time Management",
+                            iconPath: AssetsIconsPath.calenderNon,
                             onTap: () {
-                              // Get.toNamed(AppRoutes.portfolioScreen);
+                              Get.toNamed(
+                                AppRoutes.providerTimemanagementScreen,
+                              );
                             },
                           ),
+
+                          // AccountCardWidget(
+                          //   title: "Lunguage",
+                          //   iconPath: AssetsIconsPath.lunguage,
+                          //   onTap: () {
+                          //     // Get.toNamed(AppRoutes.portfolioScreen);
+                          //   },
+                          // ),
                           AccountCardWidget(
                             title: "FAQ",
                             iconPath: AssetsIconsPath.faq,

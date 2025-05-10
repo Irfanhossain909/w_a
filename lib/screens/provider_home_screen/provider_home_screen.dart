@@ -5,17 +5,15 @@ import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/const/assets_images_path.dart';
 import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/screens/provider_booked_client_screen/provider_booked_client_screen.dart';
-import 'package:w_a/screens/user_booking_date_time_screen/controller/app_celender_controller.dart';
-import 'package:w_a/screens/user_booking_date_time_screen/app_calender.dart';
+import 'package:w_a/screens/app_calender/controller/app_celender_controller.dart';
+import 'package:w_a/screens/app_calender/app_calender.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/utils/gap.dart';
 import 'package:w_a/widgets/app_image/app_image.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 
 class ProviderHomeScreen extends StatelessWidget {
-  final UserBookingDateTimeController controller = Get.put(
-    UserBookingDateTimeController(),
-  );
+  final AppCalenderController controller = Get.put(AppCalenderController());
   ProviderHomeScreen({super.key});
 
   @override

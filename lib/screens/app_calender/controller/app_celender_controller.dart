@@ -1,23 +1,24 @@
-
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-class UserBookingDateTimeController extends GetxController {
+class AppCalenderController extends GetxController {
   Rx<DateTime> focusedDay = DateTime.now().obs;
   Rx<DateTime?> selectedDay = Rx<DateTime?>(null);
 
-  final List<String> months = List.generate(12, (index) => DateFormat.MMMM().format(DateTime(0, index + 1)));
-  final List<int> years = List.generate(50, (index) => DateTime.now().year - 25 + index);
+  final List<String> months = List.generate(
+    12,
+    (index) => DateFormat.MMMM().format(DateTime(0, index + 1)),
+  );
+  final List<int> years = List.generate(
+    50,
+    (index) => DateTime.now().year - 25 + index,
+  );
 
-
-   final highlightedDates = <DateTime>[
+  final highlightedDates = <DateTime>[
     DateTime(2025, 5, 12),
     DateTime(2025, 5, 15),
     DateTime(2025, 5, 20),
   ];
-  
-  
-
 
   void selectMonth(String monthName) {
     int month = months.indexOf(monthName) + 1;
@@ -29,11 +30,19 @@ class UserBookingDateTimeController extends GetxController {
   }
 
   void goToNextYear() {
-    focusedDay.value = DateTime(focusedDay.value.year + 1, focusedDay.value.month, 1);
+    focusedDay.value = DateTime(
+      focusedDay.value.year + 1,
+      focusedDay.value.month,
+      1,
+    );
   }
 
   void goToPreviousYear() {
-    focusedDay.value = DateTime(focusedDay.value.year - 1, focusedDay.value.month, 1);
+    focusedDay.value = DateTime(
+      focusedDay.value.year - 1,
+      focusedDay.value.month,
+      1,
+    );
   }
 
   void selectDay(DateTime selected) {

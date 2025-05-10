@@ -45,6 +45,7 @@ class AppRoutes {
   static const profileScreen = "/profile-screen";
   static const providerQrCodeScannerScreen = "/profile-qrcode-scanner-screen";
   static const providerChackBookingScreen = "/profile-chack-booking-screen";
+  static const providerTimemanagementScreen = "/provider_time_management-screen";
   // static const initial = "/";
   // static const errorScreen = "/error";
   // static const signIn = "/sign-in";
