@@ -29,6 +29,7 @@ import 'package:w_a/screens/profile_screen/profile_screen.dart';
 import 'package:w_a/screens/provider_add_event_screen/provider_addevent_screen.dart';
 import 'package:w_a/screens/provider_booked_client_screen/provider_booked_client_screen.dart';
 import 'package:w_a/screens/provider_booking_details_screen/provider_booking_details_screen.dart';
+import 'package:w_a/screens/provider_chack_booking_screen/provider/provider_chack_booking_screen.dart';
 import 'package:w_a/screens/provider_event_info_screen.dart/provider_event_info_screen.dart';
 import 'package:w_a/screens/provider_home_screen/provider_home_screen.dart';
 import 'package:w_a/screens/provider_navigation_screen/controllers/provider_navigation_screen_controller.dart';
@@ -230,6 +231,11 @@ List<GetPage> appRoutesFile = <GetPage>[
     name: AppRoutes.customerQRcodeScreen,
     binding: AppBindings(),
     page: () => CustomerQrCodeScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.providerChackBookingScreen,
+    binding: AppBindings(),
+    page: () => ProviderChackBookingScreen(),
   ),
 
   // ////////////////// account

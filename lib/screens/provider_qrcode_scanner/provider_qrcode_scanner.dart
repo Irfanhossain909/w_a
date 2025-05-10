@@ -1,66 +1,11 @@
-// import 'package:flutter/material.dart';
-// import 'package:mobile_scanner/mobile_scanner.dart';
-
-// class ProviderQrCodeScannerScreen extends StatelessWidget {
-//   final MobileScannerController controller = MobileScannerController();
-
-//   ProviderQrCodeScannerScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Stack(
-//       children: [
-//         MobileScanner(
-//           controller: controller,
-//           onDetect: (BarcodeCapture capture) {
-//             final List<Barcode> barcodes = capture.barcodes;
-//             for (final barcode in barcodes) {
-//               final String? code = barcode.rawValue;
-//               if (code != null) {
-//                 print('Scanned code: $code');
-//               }
-//             }
-//           },
-//         ),
-//         // নিজের overlay design
-//         Align(
-//           alignment: Alignment.topCenter,
-//           child: Padding(
-//             padding: const EdgeInsets.all(16.0),
-//             child: Text(
-//               "Scan your QR code",
-//               style: TextStyle(color: Colors.white, fontSize: 20),
-//             ),
-//           ),
-//         ),
-//         // Camera Flip & Flash button
-//         Positioned(
-//           bottom: 30,
-//           left: 20,
-//           child: IconButton(
-//             icon: Icon(Icons.cameraswitch, color: Colors.white),
-//             onPressed: () => controller.switchCamera(),
-//           ),
-//         ),
-//         Positioned(
-//           bottom: 30,
-//           right: 20,
-//           child: IconButton(
-//             icon: Icon(Icons.flash_on, color: Colors.white),
-//             onPressed: () => controller.toggleTorch(),
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }
 
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/get.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/utils/app_all_log/app_log.dart';
+import 'package:w_a/widgets/appbar/custom_appbar.dart';
 
 class ProviderQrCodeScannerScreen extends StatefulWidget {
   const ProviderQrCodeScannerScreen({super.key});
@@ -71,88 +16,148 @@ class ProviderQrCodeScannerScreen extends StatefulWidget {
 }
 
 class _ProviderQrCodeScannerScreenState
-    extends State<ProviderQrCodeScannerScreen> {
+    extends State<ProviderQrCodeScannerScreen>
+    with SingleTickerProviderStateMixin {
   final MobileScannerController _controller = MobileScannerController();
-  Barcode? _barcode;
+  late AnimationController _animationController;
+  late Animation<double> _animation;
+
+  final double scanBoxSize = 250;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    )..repeat(reverse: true); // Makes it go up and down
+
+    _animation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
+    );
+  }
 
   void _handleBarcode(BarcodeCapture barcodes) {
     final String? code = barcodes.barcodes.firstOrNull?.rawValue;
     if (code != null) {
       appLog('Scanned: $code');
-      Get.toNamed(AppRoutes.aboutUsScreen);
+      Get.offNamed(AppRoutes.providerChackBookingScreen);
     }
   }
 
-  Widget _barcodePreview(Barcode? value) {
-    if (value == null) {
-      return const Text(
-        'Scan something!',
-        style: TextStyle(color: Colors.white),
-      );
-    }
-    return Text(
-      value.displayValue ?? 'No value',
-      style: const TextStyle(color: Colors.white),
-    );
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      appBar: CustomAppBar(title: "Scan"),
       body: Stack(
         children: [
           MobileScanner(controller: _controller, onDetect: _handleBarcode),
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              width: 250,
-              height: 250,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.green, width: 3),
-                borderRadius: BorderRadius.circular(12),
+
+          Center(
+            child: SizedBox(
+              width: scanBoxSize,
+              height: scanBoxSize,
+              child: Stack(
+                children: [
+                  // Border corners
+                  CustomPaint(
+                    size: Size(scanBoxSize, scanBoxSize),
+                    painter: ScannerOverlayPainter(),
+                  ),
+                  // Animated scanning bar
+                  AnimatedBuilder(
+                    animation: _animation,
+                    builder: (context, child) {
+                      return Positioned(
+                        top:
+                            _animation.value *
+                            (scanBoxSize - 6), // Bar height ~4
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          height: 4,
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [Colors.deepOrange, Colors.orangeAccent],
+                            ),
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ],
               ),
             ),
           ),
-          Positioned(
-            top: 50,
-            left: 20,
-            child: Text(
-              "Align QR inside the box",
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          // Positioned(
-          //   top: 50,
-          //   left: 20,
-          //   child: Text("Scan QR Code", style: TextStyle(color: Colors.white, fontSize: 18)),
-          // ),
-          // Positioned(
-          //   bottom: 30,
-          //   left: 20,
-          //   child: IconButton(
-          //     icon: Icon(Icons.cameraswitch, color: Colors.white),
-          //     onPressed: () => _controller.switchCamera(),
-          //   ),
-          // ),
-          // Positioned(
-          //   bottom: 30,
-          //   right: 20,
-          //   child: IconButton(
-          //     icon: Icon(Icons.flash_on, color: Colors.white),
-          //     onPressed: () => _controller.toggleTorch(),
-          //   ),
-          // ),
-          // Align(
-          //   alignment: Alignment.bottomCenter,
-          //   child: Container(
-          //     color: Colors.black45,
-          //     padding: const EdgeInsets.all(12),
-          //     child: _barcodePreview(_barcode),
-          //   ),
-          // ),
         ],
       ),
     );
   }
+}
+
+class ScannerOverlayPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Rect rect = Offset.zero & size;
+
+    final Paint paint =
+        Paint()
+          ..shader = AppColors.customGradient.createShader(rect)
+          ..strokeWidth = 4
+          ..style = PaintingStyle.stroke;
+
+    const double cornerLength = 30;
+
+    // Top left
+    canvas.drawLine(Offset(0, 0), Offset(cornerLength, 0), paint);
+    canvas.drawLine(Offset(0, 0), Offset(0, cornerLength), paint);
+
+    // Top right
+    canvas.drawLine(
+      Offset(size.width, 0),
+      Offset(size.width - cornerLength, 0),
+      paint,
+    );
+    canvas.drawLine(
+      Offset(size.width, 0),
+      Offset(size.width, cornerLength),
+      paint,
+    );
+
+    // Bottom left
+    canvas.drawLine(
+      Offset(0, size.height),
+      Offset(0, size.height - cornerLength),
+      paint,
+    );
+    canvas.drawLine(
+      Offset(0, size.height),
+      Offset(cornerLength, size.height),
+      paint,
+    );
+
+    // Bottom right
+    canvas.drawLine(
+      Offset(size.width, size.height),
+      Offset(size.width - cornerLength, size.height),
+      paint,
+    );
+    canvas.drawLine(
+      Offset(size.width, size.height),
+      Offset(size.width, size.height - cornerLength),
+      paint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
