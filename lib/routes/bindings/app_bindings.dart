@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:w_a/screens/change_password_screen/controllers/change_password_screen_controller.dart';
+import 'package:w_a/screens/chat_screen%20copy/controllers/chat_screen_controller.dart';
 import 'package:w_a/screens/customer_bookin_details_screen.dart/controller/customer_booking_details_controller.dart';
 import 'package:w_a/screens/customer_bookmark_screen/controller/custom_bookmark_controller.dart';
 
@@ -24,6 +25,7 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => PersonalInfoController());
     Get.lazyPut(() => ProfileEditScreenController());
     Get.lazyPut(() => ChangePasswordScreenController());
+    Get.lazyPut(() => ChatScreenController());
 
     //==================== Customer Screens ==================
     // Get.lazyPut(() => CustomerHomeController());

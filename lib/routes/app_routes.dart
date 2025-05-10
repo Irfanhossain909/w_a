@@ -15,6 +15,7 @@ class AppRoutes {
   static const privicyAndPlicyScreen = "/privicy-policy-screen";
   static const termsAndConditionScreen = "/terms-and-condition-screen";
   static const faqScreen = "/faq-screen";
+  static const chatScreen = "/chat-screen";
 
   ////////// Customer Screen ========================
   static const customerHomeScreen = "/customer-home-screen";

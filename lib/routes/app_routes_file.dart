@@ -9,6 +9,7 @@ import 'package:w_a/screens/auth_screen/update_password_screen/update_password_s
 import 'package:w_a/screens/auth_screen/sign_up_screen/sign_up_screen.dart';
 import 'package:w_a/screens/auth_screen/signin_screen/signin_screen.dart';
 import 'package:w_a/screens/change_password_screen/change_password_screen.dart';
+import 'package:w_a/screens/chat_screen%20copy/chat_screen.dart';
 import 'package:w_a/screens/customer_bookin_details_screen.dart/controller/customer_booking_details_screen.dart';
 import 'package:w_a/screens/customer_booking_confirm_screen/customer_booking_confirm_screen.dart';
 import 'package:w_a/screens/customer_booking_screen/customer_booking_screen.dart';
@@ -218,6 +219,11 @@ List<GetPage> appRoutesFile = <GetPage>[
   ),
 
   ////////////////// conversation  screen
+  GetPage(
+    name: AppRoutes.chatScreen,
+    binding: AppBindings(),
+    page: () => ChatScreen(),
+  ),
 
   // ///////////////// payment
 
