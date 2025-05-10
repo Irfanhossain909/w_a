@@ -125,7 +125,7 @@ List<GetPage> appRoutesFile = <GetPage>[
         ),
   ),
 
-  // /////////////  services
+  /////////////  services
   GetPage(
     name: AppRoutes.customerEventInfoScreen,
     binding: AppBindings(),
@@ -181,6 +181,7 @@ List<GetPage> appRoutesFile = <GetPage>[
     binding: AppBindings(),
     page: () => ProviderQrCodeScannerScreen(),
   ),
+  
 
   ////////////////////  profile
   ///

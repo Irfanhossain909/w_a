@@ -107,7 +107,9 @@ class NetworkScreen extends StatelessWidget {
           body: ListView.builder(
             itemCount: 1, // Static data count
             itemBuilder: (context, index) {
-              return ChatUserCard();
+              return ChatUserCard(
+                
+              );
             },
           ),
         );
@@ -123,7 +125,7 @@ class ChatUserCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Get.toNamed(AppRoutes.conversationScreen);
+        Get.toNamed(AppRoutes.conversationScreen);
       },
       child: Column(
         children: [
