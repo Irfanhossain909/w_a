@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/widgets/app_image/app_image.dart';
+import 'package:w_a/widgets/button/app_button.dart';
 import 'package:w_a/widgets/texts/text_edit_field.dart';
 
 class CreateCommiunityscreen extends StatelessWidget {
@@ -58,6 +61,14 @@ class CreateCommiunityscreen extends StatelessWidget {
                   containerHeight: 100,
                   maxLines: 4,
                 ),
+              ),
+              Spacer(),
+              AppButton(
+                title: "Create Community",
+                borderRadius: BorderRadius.circular(12),
+                onTap: () {
+                  Get.back();
+                },
               ),
             ],
           ),

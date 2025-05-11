@@ -14,7 +14,7 @@ import 'package:w_a/widgets/button/app_button.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 
 class CustomerEventInfoScreen extends StatelessWidget {
-  final String category = Get.arguments;
+  // final String category = Get.arguments;
 
   CustomerEventInfoScreen({super.key});
 

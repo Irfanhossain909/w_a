@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_images_path.dart';
+import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/utils/gap.dart';
 import 'package:w_a/widgets/app_image/app_image.dart';
@@ -32,6 +34,9 @@ One Event at a Time!''',
               title: "Get Started",
               titleSize: AppSize.width(value: 20),
               borderRadius: BorderRadius.circular(12),
+              onTap: () {
+                Get.toNamed(AppRoutes.signInScreen);
+              },
             ),
           ),
           Gap(height: AppSize.width(value: 60)),

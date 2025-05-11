@@ -185,6 +185,9 @@ class ProfileScreen extends StatelessWidget {
                                                 AppInputWidgetThree(
                                                   title: "New Password",
                                                   isPassWord: true,
+                                                  style: TextStyle(
+                                                    color: AppColors.text,
+                                                  ),
                                                   minLines: 1,
                                                   maxLines: 1,
                                                   fillColor: AppColors.black700,
@@ -212,7 +215,10 @@ class ProfileScreen extends StatelessWidget {
                                                   ),
                                                 ),
                                                 const SizedBox(height: 20),
-                                                GrediantYesNoButton(),
+                                                GrediantYesNoButton(
+                                                  first: "Cancel",
+                                                  second: "Delete",
+                                                ),
                                               ],
                                             ),
                                           ),

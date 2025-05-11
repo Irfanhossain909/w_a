@@ -1,9 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:w_a/const/app_colors.dart';
+import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/screens/faq_screen/controller/faq_controller.dart';
 import 'package:w_a/utils/app_size.dart';
+import 'package:w_a/widgets/app_image/app_image.dart';
 import 'package:w_a/widgets/appbar/custom_appbar.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 
@@ -62,7 +63,7 @@ class ExpandableTile extends StatelessWidget {
           margin: const EdgeInsets.symmetric(vertical: 8),
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColors.boxBg,
             borderRadius: BorderRadius.circular(8),
             boxShadow: [
               BoxShadow(
@@ -80,15 +81,19 @@ class ExpandableTile extends StatelessWidget {
                   Expanded(
                     child: AppText(
                       data: title,
-                      fontSize: AppSize.width(value: 13.5),
+                      fontSize: AppSize.width(value: 14),
                       fontWeight: FontWeight.w500,
-                      color: AppColors.black400,
+                      color: AppColors.subTitle,
                     ),
                   ),
                   AnimatedRotation(
                     turns: isExpanded ? 0.5 : 0.0,
                     duration: const Duration(milliseconds: 300),
-                    child: const Icon(Icons.keyboard_arrow_down),
+                    child: AppImage(
+                      path: AssetsIconsPath.arrowDown,
+                      width: AppSize.width(value: 16),
+                      height: AppSize.width(value: 16),
+                    ),
                   ),
                 ],
               ),
@@ -97,7 +102,7 @@ class ExpandableTile extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 8),
                   child: Text(
                     description,
-                    style: TextStyle(fontSize: 14, color: Colors.grey[700]),
+                    style: TextStyle(fontSize: 14, color: AppColors.subTitle),
                   ),
                 ),
             ],

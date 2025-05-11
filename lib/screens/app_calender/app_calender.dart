@@ -100,6 +100,25 @@ class AppCalender extends StatelessWidget {
                   dropdownColor: AppColors.white200,
                 ),
                 const Spacer(),
+                // GestureDetector(
+                //   onTap: () {
+                //     onPrevYear;
+                //   },
+                //   child: AppImage(
+                //     path: AssetsIconsPath.arrowBack,
+                //     width: AppSize.width(value: 24),
+                //     height: AppSize.width(value: 24),
+                //   ),
+                // ),
+                // Gap(width: AppSize.width(value: 12)),
+                // GestureDetector(
+                //   onTap: () => onNextYear,
+                //   child: AppImage(
+                //     path: AssetsIconsPath.arrowright,
+                //     width: AppSize.width(value: 24),
+                //     height: AppSize.width(value: 24),
+                //   ),
+                // ),
                 IconButton(
                   icon: const Icon(Icons.arrow_back),
                   color: AppColors.subTitle,

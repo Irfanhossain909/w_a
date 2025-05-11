@@ -9,6 +9,7 @@ import 'package:w_a/utils/app_all_log/app_log.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/widgets/Cards/facility_info_card.dart';
 import 'package:w_a/widgets/app_image/app_image.dart';
+import 'package:w_a/widgets/bottomSheet/filter_bottom_sheet.dart';
 import 'package:w_a/widgets/search_bar/custom_search_bar.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 
@@ -54,10 +55,15 @@ class CustomerHomeScreen extends StatelessWidget {
                             ),
                           ),
                           SizedBox(width: AppSize.width(value: 12)),
-                          AppImage(
-                            path: AssetsIconsPath.notification,
-                            width: AppSize.width(value: 26),
-                            height: AppSize.width(value: 26),
+                          GestureDetector(
+                            onTap: () {
+                              Get.toNamed(AppRoutes.notificationScreen);
+                            },
+                            child: AppImage(
+                              path: AssetsIconsPath.notification,
+                              width: AppSize.width(value: 26),
+                              height: AppSize.width(value: 26),
+                            ),
                           ),
                         ],
                       ),
@@ -69,7 +75,12 @@ class CustomerHomeScreen extends StatelessWidget {
             // 10px gap
             SliverToBoxAdapter(child: SizedBox(height: 10)),
             SliverToBoxAdapter(
-              child: CustomSearchBar(hintText: "Search in Health & Wellness"),
+              child: CustomSearchBar(
+                hintText: "Search in Health & Wellness",
+                onFilterPressed: () {
+                  Get.bottomSheet(FilterBottomSheet(items: items));
+                },
+              ),
             ),
             // 10px gap
             SliverToBoxAdapter(child: SizedBox(height: 10)),
@@ -165,7 +176,9 @@ class CustomerHomeScreen extends StatelessWidget {
                           reviewCount: 6545456,
                           numberOfPepole: 220,
                           rating: 4 / 5.0,
-                          onBookNow: () {},
+                          onBookNow: () {
+                            Get.toNamed(AppRoutes.customerEventInfoScreen);
+                          },
                         ),
                       ),
                     );
@@ -204,7 +217,9 @@ class CustomerHomeScreen extends StatelessWidget {
                           reviewCount: 6545456,
                           numberOfPepole: 220,
                           rating: 4 / 5.0,
-                          onBookNow: () {},
+                          onBookNow: () {
+                            Get.toNamed(AppRoutes.customerEventInfoScreen);
+                          },
                         ),
                       ),
                     );

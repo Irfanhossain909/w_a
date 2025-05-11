@@ -213,28 +213,37 @@ class SignUpScreen extends StatelessWidget {
                             title: "Next",
                             titleSize: 20,
                             borderRadius: BorderRadius.circular(12),
-                            onTap: () {},
+                            onTap: () {
+                              Get.back();
+                            },
                           ),
 
-                          RichText(
-                            text: TextSpan(
-                              style: TextStyle(
-                                fontSize: AppSize.width(
-                                  value: AppSize.width(value: 16),
+                          GestureDetector(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: RichText(
+                              text: TextSpan(
+                                style: TextStyle(
+                                  fontSize: AppSize.width(
+                                    value: AppSize.width(value: 16),
+                                  ),
+                                  fontFamily: AppConst.fontFamily1,
+                                  height: 1.5,
+                                  color: AppColors.subTitle,
                                 ),
-                                fontFamily: AppConst.fontFamily1,
-                                height: 1.5,
-                                color: AppColors.subTitle,
+                                children: [
+                                  const TextSpan(
+                                    text: 'Already have an account? ',
+                                  ),
+                                  TextSpan(
+                                    text: 'SignIn',
+                                    style: TextStyle(
+                                      color: AppColors.yellow500,
+                                    ),
+                                  ),
+                                ],
                               ),
-                              children: [
-                                const TextSpan(
-                                  text: 'Already have an account? ',
-                                ),
-                                TextSpan(
-                                  text: 'SignIn',
-                                  style: TextStyle(color: AppColors.yellow500),
-                                ),
-                              ],
                             ),
                           ),
                         ],

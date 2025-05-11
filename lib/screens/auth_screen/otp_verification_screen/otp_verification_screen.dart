@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/app_const.dart';
 import 'package:w_a/const/assets_images_path.dart';
+import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/screens/auth_screen/otp_verification_screen/controllers/otp_verification_screen_controller.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/utils/gap.dart';
@@ -93,39 +94,40 @@ class OtpVerificationScreen extends StatelessWidget {
                         ),
                       ),
                       Gap(height: AppSize.width(value: 10)),
-                      Obx(
-                      () {
-                          return RichText(
-                            text: TextSpan(
-                              style: TextStyle(
-                                fontSize: AppSize.width(
-                                  value: AppSize.width(value: 20),
-                                ),
-                                fontFamily: AppConst.fontFamily1,
-                                height: 1.5,
-                                color: AppColors.subTitle,
-                                fontWeight: FontWeight.w400,
+                      Obx(() {
+                        return RichText(
+                          text: TextSpan(
+                            style: TextStyle(
+                              fontSize: AppSize.width(
+                                value: AppSize.width(value: 20),
                               ),
-                              children: [
-                                const TextSpan(text: 'Resend code in '),
-                                TextSpan(
-                                  text: controller.formatTime(
-                                    controller.seconds.value,
-                                  ),
-                                  style: TextStyle(color: AppColors.yellow500),
-                                ),
-                                const TextSpan(text: ' s '),
-                              ],
+                              fontFamily: AppConst.fontFamily1,
+                              height: 1.5,
+                              color: AppColors.subTitle,
+                              fontWeight: FontWeight.w400,
                             ),
-                          );
-                        }
-                      ),
+                            children: [
+                              const TextSpan(text: 'Resend code in '),
+                              TextSpan(
+                                text: controller.formatTime(
+                                  controller.seconds.value,
+                                ),
+                                style: TextStyle(color: AppColors.yellow500),
+                              ),
+                              const TextSpan(text: ' s '),
+                            ],
+                          ),
+                        );
+                      }),
                       const Gap(height: 70),
                       Padding(
                         padding: EdgeInsets.symmetric(
                           horizontal: AppSize.width(value: 16),
                         ),
                         child: AppButton(
+                          onTap: () {
+                            Get.toNamed(AppRoutes.updatePasswordScreen);
+                          },
                           title: "Verify",
                           borderRadius: BorderRadius.circular(12),
                         ),

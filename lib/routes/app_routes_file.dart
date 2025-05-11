@@ -42,6 +42,7 @@ import 'package:w_a/screens/provider_time_management_screen/provider_time_manage
 import 'package:w_a/screens/splash_screen/splash_screen.dart';
 import 'package:w_a/screens/subscriptions_screen/subscriptions_screen.dart';
 import 'package:w_a/screens/terms_and_condition_screen/terms_and_condition_screen.dart';
+import 'package:w_a/test_roal_screen.dart';
 
 final ProviderNavigationScreenController providerNavigationControllerr =
     ProviderNavigationScreenController();
@@ -261,6 +262,11 @@ List<GetPage> appRoutesFile = <GetPage>[
     name: AppRoutes.providerTimemanagementScreen,
     binding: AppBindings(),
     page: () => ProviderTimeManagementScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.testRoal,
+    binding: AppBindings(),
+    page: () => TestRoalScreen(),
   ),
 
   // ////////////////// account

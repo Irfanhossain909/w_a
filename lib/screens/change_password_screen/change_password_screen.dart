@@ -6,6 +6,7 @@ import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/widgets/appbar/custom_appbar.dart';
 import 'package:w_a/widgets/button/app_button.dart';
 import 'package:w_a/widgets/texts/app_input_widget_three.dart';
+
 class ChangePasswordScreen extends StatelessWidget {
   const ChangePasswordScreen({super.key});
 
@@ -29,6 +30,7 @@ class ChangePasswordScreen extends StatelessWidget {
                         controller: controller.oldPasswordTextEditingController,
                         title: "Current Password",
                         isPassWord: true,
+                        style: TextStyle(color: AppColors.text),
                         minLines: 1,
                         maxLines: 1,
                         hintText: "Current Password",
@@ -52,6 +54,7 @@ class ChangePasswordScreen extends StatelessWidget {
                         controller: controller.newPasswordTextEditingController,
                         title: "New Password",
                         isPassWord: true,
+                        style: TextStyle(color: AppColors.text),
                         minLines: 1,
                         maxLines: 1,
                         hintText: "New Password",
@@ -79,6 +82,7 @@ class ChangePasswordScreen extends StatelessWidget {
                         isSecondaryPassWord: true,
                         title: "Confirm Password",
                         isPassWord: true,
+                        style: TextStyle(color: AppColors.text),
                         minLines: 1,
                         maxLines: 1,
                         hintText: "Confirm Password",

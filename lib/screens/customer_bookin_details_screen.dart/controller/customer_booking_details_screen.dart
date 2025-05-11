@@ -183,6 +183,7 @@ class CustomerBookingDetailsScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 onTap: () {
                   Get.bottomSheet(
+                    isScrollControlled: true,
                     FeedBackRattinigBottomSheet(controller: controller),
                   );
                 },

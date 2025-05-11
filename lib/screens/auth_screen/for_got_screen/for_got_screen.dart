@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/const/assets_images_path.dart';
+import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/screens/auth_screen/for_got_screen/controllers/for_got_screen_controller.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/utils/gap.dart';
@@ -73,7 +74,7 @@ class ForGotScreen extends StatelessWidget {
                         Obx(
                           () => AppButton(
                             onTap: () {
-                              // Get.toNamed(AppRoutes.otpVerificationScreen);
+                              Get.toNamed(AppRoutes.otpScreen);
                             },
                             isLoading: controller.isLoading.value,
                             borderRadius: BorderRadius.circular(12),

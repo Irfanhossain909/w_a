@@ -25,73 +25,75 @@ class FeedBackRattinigBottomSheet extends StatelessWidget {
         color: AppColors.bottmSheet,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          GestureDetector(
-            onTap: () {
-              Get.back();
-            },
-            child: Align(
-              alignment: Alignment(1, 1),
-              child: Icon(
-                Icons.close,
-                size: AppSize.width(value: 20),
-                color: AppColors.subTitle,
-              ),
-            ),
-          ),
-          AppText(
-            data: "Give Your Rating",
-            fontSize: AppSize.width(value: 24),
-            color: AppColors.subTitle,
-          ),
-          const SizedBox(height: 16),
-          Obx(
-            () => RatingBar.builder(
-              initialRating: controller.rating.value,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: true,
-              itemCount: 5,
-              itemSize: 40,
-              itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
-              itemBuilder:
-                  (context, _) => const Icon(Icons.star, color: Colors.amber),
-              onRatingUpdate: controller.updateRatting,
-            ),
-          ),
-
-          const SizedBox(height: 16),
-          AppDescriptionTextField(
-            fillColor: AppColors.boxBg,
-            title: "Comments",
-            hintText: "Write your comment",
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(
-                8.0,
-              ), // You can change the radius
-              borderSide: const BorderSide(
-                color: AppColors.subTitle, // You can change the border color
-                width: 1.0, // 1px border
-              ),
-            ),
-          ),
-
-          const SizedBox(height: 16),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: AppSize.width(value: 40)),
-            child: AppButton(
-              title: "Submit",
-              borderRadius: BorderRadius.circular(12),
-
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            GestureDetector(
               onTap: () {
-                Get.back(); // Close bottom sheet
-                AppSnackBar.message("You rated: ${controller.rating.value}");
+                Get.back();
               },
+              child: Align(
+                alignment: Alignment(1, 1),
+                child: Icon(
+                  Icons.close,
+                  size: AppSize.width(value: 20),
+                  color: AppColors.subTitle,
+                ),
+              ),
             ),
-          ),
-        ],
+            AppText(
+              data: "Give Your Rating",
+              fontSize: AppSize.width(value: 24),
+              color: AppColors.subTitle,
+            ),
+            const SizedBox(height: 16),
+            Obx(
+              () => RatingBar.builder(
+                initialRating: controller.rating.value,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemSize: 40,
+                itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                itemBuilder:
+                    (context, _) => const Icon(Icons.star, color: Colors.amber),
+                onRatingUpdate: controller.updateRatting,
+              ),
+            ),
+        
+            const SizedBox(height: 16),
+            AppDescriptionTextField(
+              fillColor: AppColors.boxBg,
+              title: "Comments",
+              hintText: "Write your comment",
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(
+                  8.0,
+                ), // You can change the radius
+                borderSide: const BorderSide(
+                  color: AppColors.subTitle, // You can change the border color
+                  width: 1.0, // 1px border
+                ),
+              ),
+            ),
+        
+            const SizedBox(height: 16),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: AppSize.width(value: 40)),
+              child: AppButton(
+                title: "Submit",
+                borderRadius: BorderRadius.circular(12),
+        
+                onTap: () {
+                  Get.back(); // Close bottom sheet
+                  AppSnackBar.message("You rated: ${controller.rating.value}");
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

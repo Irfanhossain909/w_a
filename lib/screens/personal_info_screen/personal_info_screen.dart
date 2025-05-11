@@ -19,35 +19,40 @@ class PersonalInfoScreen extends StatelessWidget {
       appBar: CustomAppBar(title: "Personal Information"),
       body: Padding(
         padding: EdgeInsets.all(AppSize.width(value: 16)),
-        child: Column(
-          spacing: AppSize.width(value: 16),
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ProfileTopWidget(
-              imgPath: AssetsImagesPath.person,
-              name: "Liam Johnson",
-              email: "liam@gmail.com",
-              editSection: ProfileEditButton(
-                text: "Edit Profile",
-                onTap: () {
-                  Get.toNamed(AppRoutes.profileEditScreen);
-                },
+        child: SingleChildScrollView(
+          child: Column(
+            spacing: AppSize.width(value: 16),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ProfileTopWidget(
+                imgPath: AssetsImagesPath.person,
+                name: "Liam Johnson",
+                email: "liam@gmail.com",
+                editSection: ProfileEditButton(
+                  text: "Edit Profile",
+                  onTap: () {
+                    Get.toNamed(AppRoutes.profileEditScreen);
+                  },
+                ),
               ),
-            ),
 
-            ProfileTitleSubtitle(title: "Name", subTitle: "Lima Johnson"),
-            ProfileTitleSubtitle(title: "Email", subTitle: "liam@gmail.com"),
-            ProfileTitleSubtitle(title: "Phone Number", subTitle: "0845721953"),
-            ProfileTitleSubtitle(
-              title: "Date Of Birth",
-              subTitle: "17 dec, 2024",
-            ),
-            ProfileTitleSubtitle(title: "Gender", subTitle: "Male"),
-            ProfileTitleSubtitle(
-              title: "Address",
-              subTitle: "2972 Westheimer Rd. Santa Ana,85486 ",
-            ),
-          ],
+              ProfileTitleSubtitle(title: "Name", subTitle: "Lima Johnson"),
+              ProfileTitleSubtitle(title: "Email", subTitle: "liam@gmail.com"),
+              ProfileTitleSubtitle(
+                title: "Phone Number",
+                subTitle: "0845721953",
+              ),
+              ProfileTitleSubtitle(
+                title: "Date Of Birth",
+                subTitle: "17 dec, 2024",
+              ),
+              ProfileTitleSubtitle(title: "Gender", subTitle: "Male"),
+              ProfileTitleSubtitle(
+                title: "Address",
+                subTitle: "2972 Westheimer Rd. Santa Ana,85486 ",
+              ),
+            ],
+          ),
         ),
       ),
     );

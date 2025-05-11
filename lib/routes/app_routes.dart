@@ -48,7 +48,7 @@ class AppRoutes {
   static const providerTimemanagementScreen = "/provider_time_management-screen";
   // static const initial = "/";
   // static const errorScreen = "/error";
-  // static const signIn = "/sign-in";
+  static const testRoal = "/test-role-screen";
   // static const signUp = "/sign-up";
   // static const forGot = "/for-got";
   // static const otpVerificationScreen = "/otp-verification-screen";

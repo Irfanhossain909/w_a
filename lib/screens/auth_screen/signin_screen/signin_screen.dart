@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/const/assets_images_path.dart';
+import 'package:w_a/routes/app_routes.dart';
 import 'package:w_a/screens/auth_screen/signin_screen/controller/sign_in_screen_controller.dart';
 import 'package:w_a/utils/app_size.dart';
 import 'package:w_a/utils/gap.dart';
@@ -141,9 +142,7 @@ class SignInScreen extends StatelessWidget {
                             ),
                             GestureDetector(
                               onTap: () {
-                                // Get.toNamed(AppRoutes.forGot);
-                                // Get.toNamed(AppRoutes.resetPasswordScreen);
-                                // Get.toNamed(AppRoutes.otpVerificationScreen);
+                                Get.toNamed(AppRoutes.forgotPasswordScreen);
                               },
                               child: ShaderMask(
                                 shaderCallback: (Rect bounds) {
@@ -167,8 +166,8 @@ class SignInScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                             isLoading: controller.isLoading.value,
                             onTap: () {
-                              // controller.clickSignIButton();
-                              // Get.toNamed(AppRoutes.userSelectScreen);
+                              
+                              Get.toNamed(AppRoutes.testRoal);
                             },
                             title: "Sign In",
                           ),
@@ -185,7 +184,7 @@ class SignInScreen extends StatelessWidget {
                             Gap(width: 10),
                             GestureDetector(
                               onTap: () {
-                                // Get.toNamed(AppRoutes.signUp);
+                                Get.toNamed(AppRoutes.signUpScreen);
                               },
                               child: ShaderMask(
                                 shaderCallback: (Rect bounds) {
