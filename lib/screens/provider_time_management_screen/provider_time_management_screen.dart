@@ -37,9 +37,10 @@ class ProviderTimeManagementScreen extends StatelessWidget {
                   selectedDay: controller.selectedDay.value,
                   months: controller.months,
                   years: controller.years,
+                  
                   onDaySelected: (selected, focused) {
-                    controller.focusedDay.value = focused;
-                    controller.selectDay(selected);
+                    // controller.focusedDay.value = focused;
+                    // controller.selectDay(selected);
                   },
                   onMonthChanged: (month) => controller.selectMonth(month),
                   onYearChanged: (year) => controller.selectYear(year),

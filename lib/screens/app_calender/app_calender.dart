@@ -3,8 +3,12 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:w_a/const/app_colors.dart';
+import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/screens/app_calender/controller/app_celender_controller.dart';
+import 'package:w_a/utils/app_all_log/app_log.dart';
 import 'package:w_a/utils/app_size.dart';
+import 'package:w_a/utils/gap.dart';
+import 'package:w_a/widgets/app_image/app_image.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 
 class AppCalender extends StatelessWidget {
@@ -100,34 +104,22 @@ class AppCalender extends StatelessWidget {
                   dropdownColor: AppColors.white200,
                 ),
                 const Spacer(),
-                // GestureDetector(
-                //   onTap: () {
-                //     onPrevYear;
-                //   },
-                //   child: AppImage(
-                //     path: AssetsIconsPath.arrowBack,
-                //     width: AppSize.width(value: 24),
-                //     height: AppSize.width(value: 24),
-                //   ),
-                // ),
-                // Gap(width: AppSize.width(value: 12)),
-                // GestureDetector(
-                //   onTap: () => onNextYear,
-                //   child: AppImage(
-                //     path: AssetsIconsPath.arrowright,
-                //     width: AppSize.width(value: 24),
-                //     height: AppSize.width(value: 24),
-                //   ),
-                // ),
-                IconButton(
-                  icon: const Icon(Icons.arrow_back),
-                  color: AppColors.subTitle,
-                  onPressed: onPrevYear,
+                GestureDetector(
+                  onTap: onPrevYear,
+                  child: AppImage(
+                    path: AssetsIconsPath.arrowBack,
+                    width: AppSize.width(value: 24),
+                    height: AppSize.width(value: 24),
+                  ),
                 ),
-                IconButton(
-                  icon: const Icon(Icons.arrow_forward),
-                  color: AppColors.subTitle,
-                  onPressed: onNextYear,
+                Gap(width: AppSize.width(value: 12)),
+                GestureDetector(
+                  onTap: onNextYear,
+                  child: AppImage(
+                    path: AssetsIconsPath.arrowright,
+                    width: AppSize.width(value: 24),
+                    height: AppSize.width(value: 24),
+                  ),
                 ),
               ],
             ),
@@ -144,7 +136,12 @@ class AppCalender extends StatelessWidget {
                 selectedDayPredicate: (day) => false, // we don’t use this
                 headerVisible: false,
                 onDaySelected: (selectedDay, focusedDay) {
+                  if (bookedDates.any((d) => isSameDay(d, selectedDay))) {
+                    return;
+                  }
+                  appLog("${selectedDay.day}");
                   calendarController.focusedDay.value = focusedDay;
+                  calendarController.toggleDateSelection(selectedDay);
                 },
                 calendarBuilders: CalendarBuilders(
                   headerTitleBuilder: (context, day) {
@@ -171,10 +168,57 @@ class AppCalender extends StatelessWidget {
                     // Check if the day is in the current month
                     final isCurrentMonth = day.month == focusedDay.month;
 
+                    final isSelected = calendarController.selectedDates.any(
+                      (d) => isSameDay(d, day),
+                    );
+
                     // Check if the day is highlighted
                     final isHighlighted = calendarController.highlightedDates
                         .any((d) => isSameDay(d, day));
 
+                    final isBooked = bookedDates.any((d) => isSameDay(d, day));
+                    if (isBooked) {
+                      return Container(
+                        margin: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color:
+                              AppColors.appBg, // use a faded or neutral color
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        alignment: Alignment.center,
+                        child: ShaderMask(
+                          shaderCallback: (Rect bounds) {
+                            return AppColors.customGradient2.createShader(
+                              bounds,
+                            );
+                          },
+                          child: AppText(
+                            data: "${day.day}",
+                            fontSize: AppSize.width(value: 14),
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
+                       
+                      );
+                    }
+
+                    if (isSelected) {
+                      return Container(
+                        margin: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: AppColors.primary,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        alignment: Alignment.center,
+                        child: AppText(
+                          data: '${day.day}',
+                          fontSize: AppSize.width(value: 16),
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.text,
+                        ),
+                      );
+                    }
                     // If the day is highlighted
                     if (isHighlighted) {
                       return Container(
@@ -219,7 +263,7 @@ class AppCalender extends StatelessWidget {
                     fontSize: 14,
                   ),
                   weekendStyle: TextStyle(
-                    color: AppColors.text, // Weekend color
+                    color: AppColors.text, // Weekday color
                     fontWeight: FontWeight.w600,
                     fontSize: 14,
                   ),
@@ -232,3 +276,9 @@ class AppCalender extends StatelessWidget {
     );
   }
 }
+
+List<DateTime> bookedDates = [
+  DateTime(2025, 5, 12),
+  DateTime(2025, 5, 14),
+  DateTime(2025, 5, 18),
+];

@@ -1,9 +1,11 @@
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class AppCalenderController extends GetxController {
   Rx<DateTime> focusedDay = DateTime.now().obs;
   Rx<DateTime?> selectedDay = Rx<DateTime?>(null);
+  RxList<DateTime?> selectedDates = <DateTime?>[].obs;
 
   final List<String> months = List.generate(
     12,
@@ -30,6 +32,14 @@ class AppCalenderController extends GetxController {
     DateTime(2025, 5, 25),
     DateTime(2025, 5, 26),
   ];
+
+  void toggleDateSelection(DateTime day) {
+    if (selectedDates.any((d) => isSameDay(d, day))) {
+      selectedDates.removeWhere((d) => isSameDay(d, day)); /////For unSelected
+    } else {
+      selectedDates.add(day);
+    }
+  }
 
   void selectMonth(String monthName) {
     int month = months.indexOf(monthName) + 1;
