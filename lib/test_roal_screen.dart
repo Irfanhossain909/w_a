@@ -11,25 +11,30 @@ class TestRoalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          AppButton(
-            title: "Customer",
-            onTap: () {
-              Get.toNamed(AppRoutes.customerNavigationScreen);
-              appLog('Provider Item Clicked');
-            },
-          ),
-          Gap(height: 20),
-          AppButton(
-            title: "Provider",
-            onTap: () {
-              Get.toNamed(AppRoutes.providerNavigationScreen);
-              appLog('Provider Item Clicked');
-            },
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(30),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AppButton(
+              borderRadius: BorderRadius.circular(12),
+              title: "Member",
+              onTap: () {
+                Get.toNamed(AppRoutes.customerNavigationScreen);
+                appLog('Member Item Clicked');
+              },
+            ),
+            Gap(height: 20),
+            AppButton(
+              borderRadius: BorderRadius.circular(12),
+              title: "Venue",
+              onTap: () {
+                Get.toNamed(AppRoutes.providerNavigationScreen);
+                appLog('Venue Item Clicked');
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

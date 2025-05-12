@@ -71,7 +71,7 @@ class ProviderHomeScreen extends StatelessWidget {
                   months: controller.months,
                   years: controller.years,
                   onDaySelected: (selected, focused) {
-                    controller.focusedDay.value = focused;
+                    // controller.focusedDay.value = focused;
                     controller.selectDay(selected);
                   },
                   onMonthChanged: (month) => controller.selectMonth(month),

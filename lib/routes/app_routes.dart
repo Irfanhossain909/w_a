@@ -18,6 +18,7 @@ class AppRoutes {
   static const networkScreen = "/network-screen";
   static const createCommiunityScreen = "/create-commiunity-screen";
   static const conversationScreen = "/conversation-screen";
+  static const lunguageScreen = "/lunguage-screen";
 
   ////////// Customer Screen ========================
   static const customerHomeScreen = "/customer-home-screen";
@@ -33,6 +34,7 @@ class AppRoutes {
   static const customerBookingScreen = "/customer-booking-screen";
   static const customerBookingDetailsScreen = "/customer-booking-details-screen";
   static const subscriptionsScreen = "/subscriptions-screen";
+  static const customerProfileScreen = "/customer-profile-screen-screen";
 
   //////////Provider Screeen ========================
   static const providerNavigationScreen = "/provider-navigation-screen";

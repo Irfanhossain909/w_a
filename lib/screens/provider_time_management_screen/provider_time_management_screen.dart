@@ -16,7 +16,7 @@ class ProviderTimeManagementScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "Time Management"),
+      appBar: CustomAppBar(title: "Booking Availability"),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(left: 16, right: 16, bottom: 30),
         child: AppButton(

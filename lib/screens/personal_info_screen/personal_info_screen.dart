@@ -48,8 +48,8 @@ class PersonalInfoScreen extends StatelessWidget {
               ),
               ProfileTitleSubtitle(title: "Gender", subTitle: "Male"),
               ProfileTitleSubtitle(
-                title: "Address",
-                subTitle: "2972 Westheimer Rd. Santa Ana,85486 ",
+                title: "Occupation",
+                subTitle: "Secondary School Teacher",
               ),
             ],
           ),

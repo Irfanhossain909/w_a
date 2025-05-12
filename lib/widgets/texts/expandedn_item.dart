@@ -120,7 +120,7 @@ class _ExpandableRadioContainerState extends State<ExpandableRadioContainer>
                           data:
                               selectedOption ??
                               widget.hintText ??
-                              "Select Option",
+                              "Select Your Role",
                           fontSize: AppSize.width(value: 16),
                           fontWeight: FontWeight.w400,
                           color: AppColors.subTitle,
@@ -161,35 +161,35 @@ class _ExpandableRadioContainerState extends State<ExpandableRadioContainer>
 
                               ListTile(
                                 title: AppText(
-                                  data: 'Customer',
+                                  data: 'Member',
                                   color: AppColors.black200,
                                   fontWeight: FontWeight.w500,
                                 ),
                                 trailing: Radio<String>(
-                                  value: 'Customer',
+                                  value: 'Member',
                                   groupValue: selectedOption,
                                   activeColor: AppColors.black200,
                                   onChanged: (value) {
                                     selectOption(value!);
                                   },
                                 ),
-                                onTap: () => selectOption('Customer'),
+                                onTap: () => selectOption('Member'),
                               ),
                               ListTile(
                                 title: AppText(
-                                  data: 'Provider',
+                                  data: 'Venue',
                                   color: AppColors.black200,
                                   fontWeight: FontWeight.w500,
                                 ),
                                 trailing: Radio<String>(
-                                  value: 'Provider',
+                                  value: 'Venue',
                                   activeColor: AppColors.black200,
                                   groupValue: selectedOption,
                                   onChanged: (value) {
                                     selectOption(value!);
                                   },
                                 ),
-                                onTap: () => selectOption('Provider'),
+                                onTap: () => selectOption('Venue'),
                               ),
                             ],
                           )

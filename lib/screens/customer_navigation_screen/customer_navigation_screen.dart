@@ -4,8 +4,8 @@ import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/screens/customer_booking_screen/customer_booking_screen.dart';
 import 'package:w_a/screens/customer_home_screen/customer_home_screen.dart';
 import 'package:w_a/screens/customer_navigation_screen/controllers/customer_navigation_screen_controller.dart';
+import 'package:w_a/screens/customer_profile_screen/customer_profile_screen.dart';
 import 'package:w_a/screens/network_screen/network_screen.dart';
-import 'package:w_a/screens/profile_screen/profile_screen.dart';
 import 'package:w_a/widgets/app_image/app_image.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 
@@ -29,9 +29,10 @@ class CustomerNavigationScreen extends StatelessWidget {
                 // // ////////// index 1
                 NetworkScreen(),
                 // // /////////// index 2
-                ProfileScreen(
-                  customerNavigationController: controller,
-                ),
+                // ProfileScreen(
+                //   customerNavigationController: controller,
+                // ),
+                CustomerProfileScreen()
                 // // /////////// index 3
                 // ProviderAccountScreen(providerNavigationControllerr: controller,
 

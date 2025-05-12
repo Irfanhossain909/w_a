@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/get_core.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:w_a/const/app_colors.dart';
 import 'package:w_a/const/assets_icons_path.dart';
 import 'package:w_a/routes/app_routes.dart';
@@ -77,8 +74,8 @@ class ProviderNavigationScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: navItem(
-                      iconPath: AssetsIconsPath.icbookingNav,
-                      label: "Booking",
+                      iconPath: AssetsIconsPath.vanue,
+                      label: "Venue",
                       isSelected: controller.selectedIndex.value == 1,
                       onTap: () => controller.changeIndex(1),
                     ),

@@ -80,6 +80,7 @@ class AssetsIconsPath {
   static const String imageChat = "assets/icons/image.png";
   static const String vedio = "assets/icons/video.png";
   static const String sendMsg = "assets/icons/Send.png";
+  static const String vanue = "assets/icons/value.png";
 
 
 }

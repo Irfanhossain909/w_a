@@ -86,7 +86,7 @@ class CustomerBookingDetailsScreen extends StatelessWidget {
                                   color: AppColors.subTitle,
                                 ),
                                 AppText(
-                                  data: "Booking Amount",
+                                  data: "Location",
                                   fontSize: AppSize.width(value: 12),
                                   fontWeight: FontWeight.w400,
                                   color: AppColors.subTitle,
@@ -288,7 +288,7 @@ class ProviderDetailsCard extends StatelessWidget {
                             color: AppColors.subTitle,
                           ),
                           AppText(
-                            data: "Booking Amount",
+                            data: "Location",
                             fontSize: AppSize.width(value: 12),
                             fontWeight: FontWeight.w400,
                             color: AppColors.subTitle,

@@ -11,6 +11,8 @@ import 'package:w_a/screens/auth_screen/signin_screen/signin_screen.dart';
 import 'package:w_a/screens/change_password_screen/change_password_screen.dart';
 import 'package:w_a/screens/conversation_screen/conversation_screen.dart';
 import 'package:w_a/screens/create_commiunity_screen/create_commiunity_screen.dart';
+import 'package:w_a/screens/customer_profile_screen/customer_profile_screen.dart';
+import 'package:w_a/screens/lunguage_screen/lunguage_screen.dart';
 import 'package:w_a/screens/network_screen/network_screen.dart';
 import 'package:w_a/screens/customer_bookin_details_screen.dart/controller/customer_booking_details_screen.dart';
 import 'package:w_a/screens/customer_booking_confirm_screen/customer_booking_confirm_screen.dart';
@@ -221,6 +223,16 @@ List<GetPage> appRoutesFile = <GetPage>[
     name: AppRoutes.faqScreen,
     binding: AppBindings(),
     page: () => FaqScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.customerProfileScreen,
+    binding: AppBindings(),
+    page: () => CustomerProfileScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.lunguageScreen,
+    binding: AppBindings(),
+    page: () => LunguageScreen(),
   ),
 
   ////////////////// conversation  screen

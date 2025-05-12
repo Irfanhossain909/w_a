@@ -126,7 +126,7 @@ class CustomerReservationCard extends StatelessWidget {
                             color: AppColors.subTitle,
                           ),
                           AppText(
-                            data: "Booking Amount",
+                            data: "Location",
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             color: AppColors.subTitle,

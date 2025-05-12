@@ -14,8 +14,8 @@ import 'package:w_a/widgets/service_widget/profile_top_widget.dart';
 import 'package:w_a/widgets/texts/app_input_widget_three.dart';
 import 'package:w_a/widgets/texts/app_text.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({
+class CustomerProfileScreen extends StatelessWidget {
+  const CustomerProfileScreen({
     super.key,
     this.providerNavigationControllerr,
     this.customerNavigationController,
@@ -54,23 +54,23 @@ class ProfileScreen extends StatelessWidget {
                             },
                           ),
 
-                          AccountCardWidget(
-                            title: "Booking Availability",    //// Time Management
-                            iconPath: AssetsIconsPath.calenderNon,
-                            onTap: () {
-                              Get.toNamed(
-                                AppRoutes.providerTimemanagementScreen,
-                              );
-                            },
-                          ),
-
                           // AccountCardWidget(
-                          //   title: "Lunguage",
-                          //   iconPath: AssetsIconsPath.lunguage,
+                          //   title: "Booking Availability",    //// Time Management
+                          //   iconPath: AssetsIconsPath.calenderNon,
                           //   onTap: () {
-                          //     // Get.toNamed(AppRoutes.portfolioScreen);
+                          //     Get.toNamed(
+                          //       AppRoutes.providerTimemanagementScreen,
+                          //     );
                           //   },
                           // ),
+
+                          AccountCardWidget(
+                            title: "Lunguage",
+                            iconPath: AssetsIconsPath.lunguage,
+                            onTap: () {
+                              Get.toNamed(AppRoutes.lunguageScreen);
+                            },
+                          ),
                           AccountCardWidget(
                             title: "FAQ",
                             iconPath: AssetsIconsPath.faq,
